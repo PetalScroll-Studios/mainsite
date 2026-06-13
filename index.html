@@ -7,6 +7,7 @@
     <title>PetalScrolls | Home</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
     <header>
@@ -29,9 +30,82 @@
     </header>
     
     <main>
-        <section class="hero">
-            <h1>Welcome to PetalScrolls</h1>
-            <p>Game development, AI workflows, and professional journey</p>
+        <section class="hero-featured">
+            <div class="container">
+                <h1>Welcome to PetalScrolls</h1>
+                <p class="hero-subtitle">Game development, AI workflows, and professional journey</p>
+                <div class="hero-actions">
+                    <a href="games.html" class="btn btn-primary">Explore Games</a>
+                    <a href="about.html" class="btn btn-secondary">Learn About Me</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Game</h2>
+                <div class="card featured-game">
+                    <div class="featured-game-image">
+                        <img src="assets/game-thumbnails/thumbnail-1.png" alt="Call of the Druid" loading="lazy">
+                    </div>
+                    <div class="featured-game-content">
+                        <h3>Call of the Druid</h3>
+                        <p>An immersive game experience developed by PetalScrolls Studio. Journey through mystical lands and discover the power of nature.</p>
+                        <p class="alpha-badge">Alpha Target: Winter 2026</p>
+                        <a href="games/call-of-the-druid.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">What I Do</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>🎮 Game Development</h3>
+                        <p>Creating immersive gaming experiences with Roblox and modern development tools.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🤖 AI Workflows</h3>
+                        <p>Exploring local AI models, LM Studio, and automated development workflows.</p>
+                    </div>
+                    <div class="card">
+                        <h3>💼 Professional</h3>
+                        <p>Business management background with expertise in technology and entrepreneurship.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Latest Updates</h2>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>Development Progress</h3>
+                        <p>Call of the Druid enters Alpha testing phase with new creature AI systems.</p>
+                        <a href="blog.html" class="btn btn-secondary">Read More</a>
+                    </div>
+                    <div class="card">
+                        <h3>AI Workflow Update</h3>
+                        <p>New MiMoCode integration streamlines development process.</p>
+                        <a href="ai-workflow.html" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Connect With Me</h2>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub" title="GitHub">GH</a>
+                    <a href="#" aria-label="Twitter" title="Twitter">TW</a>
+                    <a href="#" aria-label="Discord" title="Discord">DC</a>
+                    <a href="#" aria-label="YouTube" title="YouTube">YT</a>
+                </div>
+            </div>
         </section>
     </main>
     
