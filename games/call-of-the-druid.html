@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Call of the Druid - An immersive game experience by PetalScrolls Studio. Journey through mystical lands and discover the power of nature.">
+    <title>Call of the Druid | PetalScrolls</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        .game-hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            position: relative;
+        }
+        .game-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('../assets/scroll-textures/Scroll unrolled 1.png') center/cover;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .game-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (max-width: 768px) {
+            .game-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .screenshot-grid img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-primary);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+        }
+        .timeline-item.completed::before {
+            background: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">PetalScrolls</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../games.html" class="active">Games</a></li>
+                <li><a href="../ai-workflow.html">AI Workflow</a></li>
+                <li><a href="../dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="game-hero">
+            <div class="container">
+                <h1>Call of the Druid</h1>
+                <p>Journey through mystical lands and discover the power of nature</p>
+                <p class="alpha-badge" style="display: inline-block; background: var(--accent-primary); color: var(--bg-primary); padding: 0.5rem 1rem; border-radius: 20px; margin-top: 1rem;">Alpha Target: Winter 2026</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="game-info">
+                    <div>
+                        <h2>About the Game</h2>
+                        <p>Call of the Druid is an immersive game experience that takes you on a journey through mystical lands. As a young druid, you'll discover the ancient powers of nature, befriend magical creatures, and unravel the mysteries of the natural world.</p>
+                        <p>Built with love and passion using Roblox Studio, this game combines creative storytelling with engaging gameplay mechanics to create a unique adventure.</p>
+                        
+                        <h3 style="margin-top: 2rem;">Key Features</h3>
+                        <ul class="feature-list">
+                            <li>🌿 Explore diverse mystical environments</li>
+                            <li>🐾 Befriend and collect magical creatures</li>
+                            <li>✨ Master druidic powers and abilities</li>
+                            <li>📖 Uncover ancient mysteries and lore</li>
+                            <li>🎮 Engaging gameplay with AI-driven NPCs</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="../assets/game-thumbnails/thumbnail 1.png" alt="Call of the Druid" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 24px var(--shadow-color);">
+                        
+                        <div class="card" style="margin-top: 2rem;">
+                            <h3>Development Team</h3>
+                            <p><strong>Studio:</strong> PetalScrolls Studio</p>
+                            <p><strong>Lead Developer:</strong> Richards</p>
+                            <p><strong>Platform:</strong> Roblox</p>
+                            <p><strong>Engine:</strong> Roblox Studio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Screenshots</h2>
+                <div class="screenshot-grid">
+                    <img src="../assets/game-thumbnails/boy in clearing take 2.png" alt="Game Screenshot 1">
+                    <img src="../assets/game-thumbnails/visual and mockups.png" alt="Game Screenshot 2">
+                    <img src="../assets/game-thumbnails/thumbnail 2-a.png" alt="Game Screenshot 3">
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Development Timeline</h2>
+                <div class="card">
+                    <div class="timeline">
+                        <div class="timeline-item completed">
+                            <h4>Concept Phase ✓</h4>
+                            <p>Core mechanics defined, art style established, initial prototyping complete.</p>
+                        </div>
+                        <div class="timeline-item completed">
+                            <h4>Core Development ✓</h4>
+                            <p>Basic systems implemented, world building in progress, creature AI developed.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Content Creation ○</h4>
+                            <p>Adding more creatures, environments, and story elements.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Alpha Testing ○</h4>
+                            <p>Internal testing, bug fixes, and polish.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Beta Release ○</h4>
+                            <p>Public testing, community feedback, final adjustments.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Full Launch ○</h4>
+                            <p>Official release and ongoing support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Development Tools</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>🎮 Roblox Studio</h3>
+                        <p>Primary development environment for building and scripting the game.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🤖 AI-Assisted Development</h3>
+                        <p>Using MiMoCode and other AI tools to accelerate development workflows.</p>
+                    </div>
+                    <div class="card">
+                        <h3>📝 Lua Scripting</h3>
+                        <p>Custom scripts for game mechanics, AI behavior, and user interfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container" style="text-align: center;">
+                <h2>Stay Updated</h2>
+                <p>Follow PetalScrolls Studio for the latest development updates and news.</p>
+                <div class="social-links" style="margin-top: 1.5rem;">
+                    <a href="#" aria-label="Twitter">TW</a>
+                    <a href="#" aria-label="Discord">DC</a>
+                    <a href="#" aria-label="YouTube">YT</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 PetalScrolls Studio. All rights reserved.</p>
+    </footer>
+    
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>
