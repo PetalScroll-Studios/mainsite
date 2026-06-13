@@ -1,9 +1,0 @@
-{"type":"server-started","port":53148,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:53148","screen_dir":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content","state_dir":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/state"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/branding.html"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/waiting.html"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/site-structure.html"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/tech-stack.html"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/dashboards.html"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/seo-security.html"}
-{"type":"screen-added","file":"/home/richards/Projects/website-mimo_created/.compose/brainstorm/966014-1781371095/content/risks-phases.html"}
-{"type":"server-stopped","reason":"idle timeout"}
