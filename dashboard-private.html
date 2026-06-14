@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Private dashboard - Personal workspace for Richards">
-    <title>Private Dashboard | PetalScrolls</title>
+    <meta name="description" content="Private dashboard - Personal workspace for Richard Sees">
+    <title>Private Dashboard | PetalScroll Studios</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/components.css">
@@ -194,12 +194,45 @@
             border-radius: 4px;
             cursor: pointer;
         }
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .kanban-column {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 4px;
+            min-height: 200px;
+        }
+        .kanban-items {
+            min-height: 100px;
+        }
+        .kanban-item {
+            background: var(--bg-secondary);
+            padding: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            border-left: 3px solid var(--accent-primary);
+            cursor: grab;
+        }
+        .kanban-item:active {
+            cursor: grabbing;
+        }
+        .calendar-day.has-events {
+            background: rgba(201, 168, 76, 0.2);
+        }
+        @media (max-width: 768px) {
+            .kanban-board {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="index.html" class="logo">PetalScrolls</a>
+            <a href="index.html" class="logo">PetalScroll Studios</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
@@ -238,34 +271,52 @@
             <section class="hero" style="padding: 2rem;">
                 <div class="container">
                     <h1>Private Dashboard</h1>
-                    <p>Welcome back, Richards!</p>
+                    <p>Welcome back, Richard!</p>
                 </div>
             </section>
             
             <section class="section">
                 <div class="container">
-                    <div class="widget-grid">
-                        <!-- Calendar Widget -->
-                        <div class="widget">
-                            <h3>📅 Calendar</h3>
-                            <div id="calendarWidget">
-                                <!-- Calendar will be populated by JS -->
+                    <!-- Row 1: Calendar -->
+                    <div class="widget" style="margin-bottom: 1.5rem;">
+                        <h3>📅 Calendar</h3>
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                            <button onclick="prevMonth()" class="btn btn-secondary" style="padding: 0.5rem 1rem;">← Prev</button>
+                            <button onclick="nextMonth()" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Next →</button>
+                            <button onclick="addCalendarEvent()" class="btn btn-primary" style="padding: 0.5rem 1rem;">+ Add Event</button>
+                        </div>
+                        <div id="calendarWidget">
+                            <!-- Calendar will be populated by JS -->
+                        </div>
+                    </div>
+                    
+                    <!-- Row 2: Kanban Board -->
+                    <div class="widget" style="margin-bottom: 1.5rem;">
+                        <h3>📋 Development Tasks (Kanban)</h3>
+                        <div class="kanban-board">
+                            <div class="kanban-column">
+                                <h4 style="color: #3498db; margin-bottom: 1rem;">📥 To Do</h4>
+                                <div id="todoColumn" class="kanban-items">
+                                    <!-- Tasks will be populated by JS -->
+                                </div>
+                                <div class="add-task-form">
+                                    <input type="text" id="newTodoInput" placeholder="Add task...">
+                                    <button onclick="addKanbanTask('todo')">Add</button>
+                                </div>
+                            </div>
+                            <div class="kanban-column">
+                                <h4 style="color: #f39c12; margin-bottom: 1rem;">🔄 In Progress</h4>
+                                <div id="inProgressColumn" class="kanban-items"></div>
+                            </div>
+                            <div class="kanban-column">
+                                <h4 style="color: #27ae60; margin-bottom: 1rem;">✅ Done</h4>
+                                <div id="doneColumn" class="kanban-items"></div>
                             </div>
                         </div>
-                        
-                        <!-- Dev Tasks Widget -->
-                        <div class="widget">
-                            <h3>✅ Development Tasks</h3>
-                            <ul class="task-list" id="taskList">
-                                <!-- Tasks will be populated by JS -->
-                            </ul>
-                            <div class="add-task-form">
-                                <input type="text" id="newTaskInput" placeholder="Add new task...">
-                                <button onclick="addTask()">Add</button>
-                            </div>
-                        </div>
-                        
-                        <!-- Quick Links Widget -->
+                    </div>
+                    
+                    <!-- Row 3: Quick Links & Session Info -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <div class="widget">
                             <h3>🔗 Quick Links</h3>
                             <div class="quick-links-grid">
@@ -278,8 +329,8 @@
                                 <a href="https://github.com" class="quick-link" target="_blank">
                                     💻 GitHub
                                 </a>
-                                <a href="https://code.visualstudio.com" class="quick-link" target="_blank">
-                                    📝 VS Code
+                                <a href="https://vscodium.com" class="quick-link" target="_blank">
+                                    📝 VS Codium
                                 </a>
                                 <a href="https://discord.com" class="quick-link" target="_blank">
                                     💬 Discord
@@ -290,12 +341,13 @@
                             </div>
                         </div>
                         
-                        <!-- Session Info Widget -->
                         <div class="widget">
                             <h3>ℹ️ Session Info</h3>
+                            <p style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 1rem;">Your current login session details and quick access information.</p>
                             <p><strong>Status:</strong> <span style="color: #27ae60;">Active</span></p>
                             <p><strong>Session expires:</strong> <span id="sessionExpiry">--</span></p>
                             <p><strong>Last login:</strong> <span id="lastLogin">--</span></p>
+                            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 1rem;">Session auto-expires after 24 hours for security.</p>
                         </div>
                     </div>
                 </div>
@@ -313,51 +365,29 @@
     <script src="js/nav.js"></script>
     <script src="js/dashboard.js"></script>
     <script>
-        // Task management
-        let tasks = JSON.parse(localStorage.getItem('devTasks')) || [
-            { id: 1, text: 'Implement creature AI', completed: true },
-            { id: 2, text: 'Fix pathfinding bug', completed: false },
-            { id: 3, text: 'Create new UI menu', completed: false },
-            { id: 4, text: 'Optimize performance', completed: false }
-        ];
+        // Calendar state
+        let currentDate = new Date();
+        let calendarEvents = JSON.parse(localStorage.getItem('calendarEvents')) || {};
         
-        function renderTasks() {
-            const taskList = document.getElementById('taskList');
-            taskList.innerHTML = tasks.map(task => `
-                <li class="task-item">
-                    <input type="checkbox" class="task-checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${task.id})">
-                    <span class="task-text ${task.completed ? 'completed' : ''}">${task.text}</span>
-                </li>
-            `).join('');
-            localStorage.setItem('devTasks', JSON.stringify(tasks));
-        }
+        // Kanban state
+        let kanbanTasks = JSON.parse(localStorage.getItem('kanbanTasks')) || {
+            todo: [
+                { id: 1, text: 'Implement creature AI' },
+                { id: 2, text: 'Create new UI menu' }
+            ],
+            inProgress: [
+                { id: 3, text: 'Fix pathfinding bug' }
+            ],
+            done: [
+                { id: 4, text: 'Optimize performance' }
+            ]
+        };
         
-        function toggleTask(id) {
-            tasks = tasks.map(task => 
-                task.id === id ? { ...task, completed: !task.completed } : task
-            );
-            renderTasks();
-        }
-        
-        function addTask() {
-            const input = document.getElementById('newTaskInput');
-            if (input.value.trim()) {
-                tasks.push({
-                    id: Date.now(),
-                    text: input.value.trim(),
-                    completed: false
-                });
-                input.value = '';
-                renderTasks();
-            }
-        }
-        
-        // Calendar widget
+        // Calendar functions
         function renderCalendar() {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = now.getMonth();
-            const today = now.getDate();
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            const today = new Date();
             
             const firstDay = new Date(year, month, 1).getDay();
             const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -379,11 +409,115 @@
             }
             
             for (let day = 1; day <= daysInMonth; day++) {
-                const isToday = day === today;
-                html += `<div class="calendar-day ${isToday ? 'today' : ''}">${day}</div>`;
+                const isToday = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+                const dateKey = `${year}-${month}-${day}`;
+                const hasEvents = calendarEvents[dateKey] && calendarEvents[dateKey].length > 0;
+                
+                html += `<div class="calendar-day ${isToday ? 'today' : ''} ${hasEvents ? 'has-events' : ''}" 
+                         onclick="toggleDayEvents(${day})" style="cursor: pointer; position: relative;">
+                    ${day}
+                    ${hasEvents ? '<span style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background: var(--accent-primary); border-radius: 50%;"></span>' : ''}
+                </div>`;
             }
             
             document.getElementById('calendarWidget').innerHTML = html;
+        }
+        
+        function prevMonth() {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        }
+        
+        function nextMonth() {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        }
+        
+        function addCalendarEvent() {
+            const day = prompt('Enter day of month:');
+            if (day) {
+                const event = prompt('Enter event description:');
+                if (event) {
+                    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`;
+                    if (!calendarEvents[dateKey]) {
+                        calendarEvents[dateKey] = [];
+                    }
+                    calendarEvents[dateKey].push(event);
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    renderCalendar();
+                }
+            }
+        }
+        
+        function toggleDayEvents(day) {
+            const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`;
+            const events = calendarEvents[dateKey] || [];
+            
+            if (events.length > 0) {
+                alert(`Events for day ${day}:\n${events.join('\n')}`);
+            } else {
+                const event = prompt(`Add event for day ${day}:`);
+                if (event) {
+                    if (!calendarEvents[dateKey]) {
+                        calendarEvents[dateKey] = [];
+                    }
+                    calendarEvents[dateKey].push(event);
+                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
+                    renderCalendar();
+                }
+            }
+        }
+        
+        // Kanban functions
+        function renderKanban() {
+            ['todo', 'inProgress', 'done'].forEach(status => {
+                const column = document.getElementById(`${status === 'inProgress' ? 'inProgress' : status}Column`);
+                column.innerHTML = kanbanTasks[status].map(task => `
+                    <div class="kanban-item" draggable="true" ondragstart="drag(event)" id="task-${task.id}">
+                        <span>${task.text}</span>
+                        <div style="display: flex; gap: 0.25rem; margin-top: 0.5rem;">
+                            ${status !== 'todo' ? `<button onclick="moveTask(${task.id}, '${status}', 'prev')" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">←</button>` : ''}
+                            ${status !== 'done' ? `<button onclick="moveTask(${task.id}, '${status}', 'next')" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">→</button>` : ''}
+                            <button onclick="deleteTask(${task.id}, '${status}')" style="font-size: 0.75rem; padding: 0.25rem 0.5rem; background: #e74c3c;">×</button>
+                        </div>
+                    </div>
+                `).join('');
+            });
+            localStorage.setItem('kanbanTasks', JSON.stringify(kanbanTasks));
+        }
+        
+        function addKanbanTask(status) {
+            const input = document.getElementById('newTodoInput');
+            if (input.value.trim()) {
+                kanbanTasks[status].push({
+                    id: Date.now(),
+                    text: input.value.trim()
+                });
+                input.value = '';
+                renderKanban();
+            }
+        }
+        
+        function moveTask(id, currentStatus, direction) {
+            const statusOrder = ['todo', 'inProgress', 'done'];
+            const currentIndex = statusOrder.indexOf(currentStatus);
+            const newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
+            
+            if (newIndex >= 0 && newIndex < statusOrder.length) {
+                const taskIndex = kanbanTasks[currentStatus].findIndex(t => t.id === id);
+                const task = kanbanTasks[currentStatus].splice(taskIndex, 1)[0];
+                kanbanTasks[statusOrder[newIndex]].push(task);
+                renderKanban();
+            }
+        }
+        
+        function deleteTask(id, status) {
+            kanbanTasks[status] = kanbanTasks[status].filter(t => t.id !== id);
+            renderKanban();
+        }
+        
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
         }
         
         // Session info
@@ -407,8 +541,8 @@
             if (DashboardAuth.isAuthenticated()) {
                 loginContainer.classList.add('hidden');
                 dashboardContainer.classList.add('active');
-                renderTasks();
                 renderCalendar();
+                renderKanban();
                 updateSessionInfo();
             }
             
@@ -420,8 +554,8 @@
                 if (DashboardAuth.login(password)) {
                     loginContainer.classList.add('hidden');
                     dashboardContainer.classList.add('active');
-                    renderTasks();
                     renderCalendar();
+                    renderKanban();
                     updateSessionInfo();
                 } else {
                     errorMessage.style.display = 'block';

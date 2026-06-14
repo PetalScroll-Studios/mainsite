@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Local AI workflow setup guide. Learn about LM Studio, MiMoCode, and AI-assisted development tools.">
+    <meta name="description" content="Local AI workflow setup guide. Learn about LM Studio, MiMoCode, Unsloth Studio, and AI-assisted development tools.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="AI Workflow | PetalScroll Studios">
-    <meta property="og:description" content="Local AI workflow setup guide. Learn about LM Studio, MiMoCode, and AI-assisted development tools.">
+    <meta property="og:description" content="Local AI workflow setup guide. Learn about LM Studio, MiMoCode, Unsloth Studio, and AI-assisted development tools.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://yoursite.com/ai-workflow.html">
     <meta property="og:image" content="https://yoursite.com/assets/images/og-image.jpg">
@@ -130,9 +130,9 @@
                         <p style="font-size: 0.9rem; opacity: 0.8;"><strong>Use case:</strong> Code completion, refactoring, documentation</p>
                     </div>
                     <div class="card tool-card">
-                        <h3>🧠 Claude</h3>
-                        <p>Advanced AI for complex reasoning, planning, and multi-step tasks.</p>
-                        <p style="font-size: 0.9rem; opacity: 0.8;"><strong>Use case:</strong> Architecture planning, debugging, research</p>
+                        <h3>🧠 Unsloth Studio</h3>
+                        <p>Custom quantizations and dataset training for specialized local models. Experiment with new architectures for optimal performance.</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;"><strong>Use case:</strong> Fine-tuning, quantization, custom model training, architecture experimentation</p>
                     </div>
                 </div>
             </div>
@@ -144,9 +144,18 @@
                 
                 <div class="card" style="margin-bottom: 2rem;">
                     <h3>Hardware Requirements</h3>
-                    <div class="grid-2" style="margin-top: 1rem;">
+                    <div class="grid-3" style="margin-top: 1rem;">
                         <div>
-                            <h4>Minimum</h4>
+                            <h4>Budget-Tier Setup</h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• 8-16GB RAM</li>
+                                <li>• 4GB VRAM GPU</li>
+                                <li>• 10-25GB free storage</li>
+                            </ul>
+                            <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.5rem;">Even a Raspberry Pi can run small models!</p>
+                        </div>
+                        <div>
+                            <h4>Mid-Tier Setup</h4>
                             <ul style="list-style: none; padding: 0;">
                                 <li>• 16GB RAM</li>
                                 <li>• 8GB VRAM GPU</li>
@@ -182,12 +191,12 @@
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h4>Download Models</h4>
-                        <p>Browse and download models suitable for your hardware. Start with smaller models (7B-13B) if you have limited VRAM.</p>
+                        <p>Browse and download models suitable for your hardware. Start with smaller models (4B-9B) if you have limited VRAM.</p>
                         <div class="code-block">
                             # Recommended starting models:<br>
-                            # - Llama 3.1 8B (good balance)<br>
-                            # - Mistral 7B (fast, efficient)<br>
-                            # - CodeLlama 13B (code-focused)
+                            # - Gemma 4:e2b or e4b (General daily drivers, multiple flavors)<br>
+                            # - LFM2.5-8b-a1b (Great mid-range MOE model)<br>
+                            # - Qwopus 3.5-4b or 9b coders (Qwen coders cross-trained with Opus)
                         </div>
                     </div>
                 </div>
@@ -226,24 +235,19 @@
                 
                 <div class="model-grid">
                     <div class="card model-card">
-                        <h4>Llama 3.1 8B</h4>
-                        <p>Great all-around model</p>
+                        <h4>Gemma 4:e2b / e4b</h4>
+                        <p>General daily drivers, multiple flavors</p>
                         <span class="model-badge">General</span>
                     </div>
                     <div class="card model-card">
-                        <h4>CodeLlama 13B</h4>
-                        <p>Specialized for code</p>
+                        <h4>LFM2.5-8b-a1b</h4>
+                        <p>Great mid-range MOE model</p>
+                        <span class="model-badge">MOE</span>
+                    </div>
+                    <div class="card model-card">
+                        <h4>Qwopus 3.5-4b / 9b</h4>
+                        <p>Qwen coders cross-trained with Opus</p>
                         <span class="model-badge">Coding</span>
-                    </div>
-                    <div class="card model-card">
-                        <h4>Mistral 7B</h4>
-                        <p>Fast and efficient</p>
-                        <span class="model-badge">Speed</span>
-                    </div>
-                    <div class="card model-card">
-                        <h4>Phi-3 Medium</h4>
-                        <p>Microsoft's compact model</p>
-                        <span class="model-badge">Balanced</span>
                     </div>
                 </div>
             </div>
