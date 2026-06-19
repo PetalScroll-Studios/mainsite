@@ -140,12 +140,14 @@
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 4px;
+            gap: 2px;
             text-align: center;
+            max-width: 350px;
+            margin: 0 auto;
         }
         .calendar-day {
-            padding: 0.5rem;
-            font-size: 0.85rem;
+            padding: 0.35rem;
+            font-size: 0.8rem;
         }
         .calendar-day.today {
             background: var(--accent-primary);
@@ -155,8 +157,9 @@
         }
         .calendar-header {
             font-weight: bold;
-            padding: 0.5rem;
+            padding: 0.35rem;
             color: var(--accent-primary);
+            font-size: 0.9rem;
         }
         .logout-btn {
             position: fixed;
@@ -280,12 +283,12 @@
                     <!-- Row 1: Calendar -->
                     <div class="widget" style="margin-bottom: 1.5rem;">
                         <h3>📅 Calendar</h3>
-                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
-                            <button onclick="prevMonth()" class="btn btn-secondary" style="padding: 0.5rem 1rem;">← Prev</button>
-                            <button onclick="nextMonth()" class="btn btn-secondary" style="padding: 0.5rem 1rem;">Next →</button>
-                            <button onclick="addCalendarEvent()" class="btn btn-primary" style="padding: 0.5rem 1rem;">+ Add Event</button>
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; justify-content: center;">
+                            <button onclick="prevMonth()" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">← Prev</button>
+                            <button onclick="nextMonth()" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Next →</button>
+                            <button onclick="addCalendarEvent()" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">+ Event</button>
                         </div>
-                        <div id="calendarWidget">
+                        <div id="calendarWidget" style="max-width: 350px; margin: 0 auto;">
                             <!-- Calendar will be populated by JS -->
                         </div>
                     </div>
@@ -318,26 +321,9 @@
                     <!-- Row 3: Quick Links & Session Info -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <div class="widget">
-                            <h3>🔗 Quick Links</h3>
-                            <div class="quick-links-grid">
-                                <a href="https://lmstudio.ai" class="quick-link" target="_blank">
-                                    🖥️ LM Studio
-                                </a>
-                                <a href="https://create.roblox.com" class="quick-link" target="_blank">
-                                    🎮 Roblox Studio
-                                </a>
-                                <a href="https://github.com" class="quick-link" target="_blank">
-                                    💻 GitHub
-                                </a>
-                                <a href="https://vscodium.com" class="quick-link" target="_blank">
-                                    📝 VS Codium
-                                </a>
-                                <a href="https://discord.com" class="quick-link" target="_blank">
-                                    💬 Discord
-                                </a>
-                                <a href="https://twitter.com" class="quick-link" target="_blank">
-                                    🐦 Twitter
-                                </a>
+                            <h3>🔗 Quick Links <button onclick="openLinkEditor()" style="font-size: 0.7rem; padding: 0.2rem 0.5rem; margin-left: 0.5rem; cursor: pointer;">Edit</button></h3>
+                            <div id="quickLinksContainer" class="quick-links-grid">
+                                <!-- Links populated by JS -->
                             </div>
                         </div>
                         
@@ -357,8 +343,24 @@
         </div>
     </main>
     
+    <!-- Link Editor Modal -->
+    <div id="linkEditorModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background: var(--bg-secondary); padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h3 style="margin-bottom: 1rem;">Edit Quick Links</h3>
+            <div id="linkEditorList"></div>
+            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                <button onclick="addNewLink()" class="btn btn-primary" style="flex: 1;">+ Add Link</button>
+                <button onclick="resetLinks()" class="btn btn-secondary" style="flex: 1;">Reset Defaults</button>
+            </div>
+            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+                <button onclick="saveLinks()" class="btn btn-primary" style="flex: 1;">Save</button>
+                <button onclick="closeLinkEditor()" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
     <footer>
-        <p>&copy; 2026 PetalScrolls Studio. All rights reserved.</p>
+        <p>&copy; 2026 PetalScroll Studios. All rights reserved.</p>
     </footer>
     
     <script src="js/theme.js"></script>
@@ -544,6 +546,7 @@
                 renderCalendar();
                 renderKanban();
                 updateSessionInfo();
+                renderQuickLinks();
             }
             
             // Handle login
@@ -557,11 +560,80 @@
                     renderCalendar();
                     renderKanban();
                     updateSessionInfo();
+                    renderQuickLinks();
                 } else {
                     errorMessage.style.display = 'block';
                 }
             });
         });
+        
+        // Quick Links
+        const DEFAULT_LINKS = [
+            { name: 'LM Studio', url: 'https://lmstudio.ai', icon: '🖥️' },
+            { name: 'Roblox Studio', url: 'https://create.roblox.com', icon: '🎮' },
+            { name: 'GitHub', url: 'https://github.com', icon: '💻' },
+            { name: 'VS Codium', url: 'https://vscodium.com', icon: '📝' },
+            { name: 'Discord', url: 'https://discord.com', icon: '💬' },
+            { name: 'YouTube', url: 'https://www.youtube.com/@StarTrekNotStarWars', icon: '📺' }
+        ];
+        
+        let editedLinks = [];
+        
+        function getLinks() {
+            return JSON.parse(localStorage.getItem('quickLinks')) || [...DEFAULT_LINKS];
+        }
+        
+        function renderQuickLinks() {
+            const links = getLinks();
+            const container = document.getElementById('quickLinksContainer');
+            container.innerHTML = links.map(link => 
+                `<a href="${link.url}" class="quick-link" target="_blank" rel="noopener">${link.icon} ${link.name}</a>`
+            ).join('');
+        }
+        
+        function openLinkEditor() {
+            editedLinks = getLinks().map(l => ({...l}));
+            renderLinkEditorList();
+            document.getElementById('linkEditorModal').style.display = 'flex';
+        }
+        
+        function closeLinkEditor() {
+            document.getElementById('linkEditorModal').style.display = 'none';
+        }
+        
+        function renderLinkEditorList() {
+            const list = document.getElementById('linkEditorList');
+            list.innerHTML = editedLinks.map((link, i) => `
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center;">
+                    <input type="text" value="${link.icon}" style="width: 40px; padding: 0.4rem; text-align: center;" onchange="editedLinks[${i}].icon = this.value">
+                    <input type="text" value="${link.name}" style="flex: 1; padding: 0.4rem;" onchange="editedLinks[${i}].name = this.value" placeholder="Name">
+                    <input type="url" value="${link.url}" style="flex: 2; padding: 0.4rem;" onchange="editedLinks[${i}].url = this.value" placeholder="URL">
+                    <button onclick="removeLink(${i})" style="padding: 0.4rem 0.6rem; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer;">×</button>
+                </div>
+            `).join('');
+        }
+        
+        function addNewLink() {
+            editedLinks.push({ name: '', url: '', icon: '🔗' });
+            renderLinkEditorList();
+        }
+        
+        function removeLink(index) {
+            editedLinks.splice(index, 1);
+            renderLinkEditorList();
+        }
+        
+        function saveLinks() {
+            const valid = editedLinks.filter(l => l.name && l.url);
+            localStorage.setItem('quickLinks', JSON.stringify(valid));
+            renderQuickLinks();
+            closeLinkEditor();
+        }
+        
+        function resetLinks() {
+            editedLinks = [...DEFAULT_LINKS];
+            renderLinkEditorList();
+        }
     </script>
 </body>
 </html>

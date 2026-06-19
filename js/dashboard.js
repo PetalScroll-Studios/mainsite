@@ -11,7 +11,7 @@
     
     function login(password) {
         // Simple hash for demo - in production use proper auth
-        if (password === 'petalscrolls2026') {
+        if (password === 'Petalscroll2026') {
             localStorage.setItem(SESSION_KEY, JSON.stringify({
                 timestamp: Date.now()
             }));
