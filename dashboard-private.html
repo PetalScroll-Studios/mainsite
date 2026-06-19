@@ -16,14 +16,17 @@
             padding: 2rem;
         }
         .login-form {
-            background: var(--bg-secondary);
+            background: #0d0d1a;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 12px var(--shadow-color);
+            border: 1px solid #2a2a3e;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
         }
         .login-form h2 {
             text-align: center;
             margin-bottom: 1.5rem;
+            color: #e8ecf4;
+            font-family: 'JetBrains Mono', monospace;
         }
         .form-group {
             margin-bottom: 1.5rem;
@@ -32,203 +35,127 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
+            color: #8892a4;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
         }
         .form-group input {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid var(--border-color);
+            border: 1px solid #3a3a50;
             border-radius: 4px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            background: #141428;
+            color: #c0c8d8;
             font-size: 1rem;
+            font-family: 'JetBrains Mono', monospace;
         }
         .form-group input:focus {
             outline: none;
-            border-color: var(--accent-primary);
+            border-color: #5a9cf8;
         }
         .login-btn {
             width: 100%;
             padding: 0.75rem;
-            background: var(--accent-primary);
-            color: var(--bg-primary);
+            background: #5a9cf8;
+            color: #0d0d1a;
             border: none;
             border-radius: 4px;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s ease;
+            font-family: 'JetBrains Mono', monospace;
+            transition: background 0.2s ease;
         }
         .login-btn:hover {
-            background: var(--accent-secondary);
+            background: #7bb3ff;
         }
         .error-message {
             color: #e74c3c;
             text-align: center;
             margin-top: 1rem;
             display: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
         }
         .dashboard-container {
             display: none;
         }
         .dashboard-container.active {
-            display: block;
+            display: flex;
+            height: calc(100vh - 60px);
+            overflow: hidden;
         }
         .login-container.hidden {
             display: none;
         }
-        .widget-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .widget {
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 1.5rem;
-        }
-        .widget h3 {
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-primary);
-        }
-        .task-list {
-            list-style: none;
-            padding: 0;
-        }
-        .task-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .task-item:last-child {
-            border-bottom: none;
-        }
-        .task-checkbox {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-        }
-        .task-text {
-            flex: 1;
-        }
-        .task-text.completed {
-            text-decoration: line-through;
-            opacity: 0.6;
-        }
-        .quick-links-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        .quick-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem;
-            background: var(--bg-primary);
-            border-radius: 4px;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-        .quick-link:hover {
-            background: var(--accent-primary);
-            color: var(--bg-primary);
-        }
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 2px;
-            text-align: center;
-            max-width: 350px;
-            margin: 0 auto;
-        }
-        .calendar-day {
-            padding: 0.35rem;
-            font-size: 0.8rem;
-        }
-        .calendar-day.today {
-            background: var(--accent-primary);
-            color: var(--bg-primary);
-            border-radius: 4px;
-            font-weight: bold;
-        }
-        .calendar-header {
-            font-weight: bold;
-            padding: 0.35rem;
-            color: var(--accent-primary);
-            font-size: 0.9rem;
-        }
         .logout-btn {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            padding: 0.75rem 1.5rem;
+            bottom: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
             background: #e74c3c;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-weight: 500;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            z-index: 100;
         }
         .logout-btn:hover {
             background: #c0392b;
         }
-        .add-task-form {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        .add-task-form input {
-            flex: 1;
-            padding: 0.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-        .add-task-form button {
-            padding: 0.5rem 1rem;
-            background: var(--accent-primary);
-            color: var(--bg-primary);
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .kanban-board {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-        .kanban-column {
-            background: var(--bg-primary);
-            padding: 1rem;
-            border-radius: 4px;
-            min-height: 200px;
-        }
-        .kanban-items {
-            min-height: 100px;
-        }
         .kanban-item {
-            background: var(--bg-secondary);
+            background: #141428;
             padding: 0.75rem;
             border-radius: 4px;
             margin-bottom: 0.5rem;
-            border-left: 3px solid var(--accent-primary);
+            border-left: 3px solid #5a9cf8;
             cursor: grab;
+            color: #c0c8d8;
+            font-size: 0.85rem;
         }
         .kanban-item:active {
             cursor: grabbing;
         }
-        .calendar-day.has-events {
-            background: rgba(201, 168, 76, 0.2);
+        .add-task-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
         }
-        @media (max-width: 768px) {
-            .kanban-board {
-                grid-template-columns: 1fr;
-            }
+        .add-task-form input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #3a3a50;
+            border-radius: 4px;
+            background: #141428;
+            color: #c0c8d8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+        .add-task-form button {
+            padding: 0.5rem 1rem;
+            background: #5a9cf8;
+            color: #0d0d1a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+        }
+        .kanban-items {
+            min-height: 80px;
+        }
+        .session-info {
+            padding: 1rem;
+            color: #6a7488;
+            font-size: 0.75rem;
+        }
+        .session-info p {
+            margin: 0.3rem 0;
+        }
+        .session-info strong {
+            color: #8892a4;
         }
     </style>
 </head>
@@ -263,98 +190,127 @@
                     <button type="submit" class="login-btn">Access Dashboard</button>
                     <p class="error-message" id="errorMessage">Incorrect password. Please try again.</p>
                 </form>
-                <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
-                    <a href="dashboard.html">← Back to Public Dashboard</a>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.85rem;">
+                    <a href="dashboard.html" style="color: #5a9cf8;">← Back to Public Dashboard</a>
                 </p>
             </div>
         </div>
         
         <!-- Dashboard Content -->
         <div class="dashboard-container" id="dashboardContainer">
-            <section class="hero" style="padding: 2rem;">
-                <div class="container">
-                    <h1>Private Dashboard</h1>
-                    <p>Welcome back, Richard!</p>
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar" id="sidebar">
+                <div class="sidebar-header">control panel</div>
+                <nav class="sidebar-nav" id="sidebarNav">
+                    <!-- Populated by JS -->
+                </nav>
+                <div class="sidebar-footer">
+                    <button class="sidebar-add-btn" onclick="openSidebarEditor()">
+                        <span class="icon">+</span>
+                        <span>add link</span>
+                    </button>
                 </div>
-            </section>
+            </aside>
             
-            <section class="section">
-                <div class="container">
-                    <!-- Row 1: Calendar -->
-                    <div class="widget" style="margin-bottom: 1.5rem;">
-                        <h3>📅 Calendar</h3>
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; justify-content: center;">
-                            <button onclick="prevMonth()" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">← Prev</button>
-                            <button onclick="nextMonth()" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Next →</button>
-                            <button onclick="addCalendarEvent()" class="btn btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">+ Event</button>
-                        </div>
-                        <div id="calendarWidget" style="max-width: 350px; margin: 0 auto;">
-                            <!-- Calendar will be populated by JS -->
-                        </div>
-                    </div>
-                    
-                    <!-- Row 2: Kanban Board -->
-                    <div class="widget" style="margin-bottom: 1.5rem;">
-                        <h3>📋 Development Tasks (Kanban)</h3>
-                        <div class="kanban-board">
-                            <div class="kanban-column">
-                                <h4 style="color: #3498db; margin-bottom: 1rem;">📥 To Do</h4>
-                                <div id="todoColumn" class="kanban-items">
-                                    <!-- Tasks will be populated by JS -->
-                                </div>
-                                <div class="add-task-form">
-                                    <input type="text" id="newTodoInput" placeholder="Add task...">
-                                    <button onclick="addKanbanTask('todo')">Add</button>
-                                </div>
-                            </div>
-                            <div class="kanban-column">
-                                <h4 style="color: #f39c12; margin-bottom: 1rem;">🔄 In Progress</h4>
-                                <div id="inProgressColumn" class="kanban-items"></div>
-                            </div>
-                            <div class="kanban-column">
-                                <h4 style="color: #27ae60; margin-bottom: 1rem;">✅ Done</h4>
-                                <div id="doneColumn" class="kanban-items"></div>
+            <!-- Main Panel -->
+            <div class="dashboard-main">
+                <!-- Calendar Panel -->
+                <div class="dashboard-panel calendar-panel active" id="panel-calendar">
+                    <h2 style="margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #e8ecf4;">📅 Calendar</h2>
+                    <iframe src="https://calendar.google.com/calendar/embed?src=9dac58db2657c8dc47d9505449ace40efdc0ba3af85618a53c05c13a39534343%40group.calendar.google.com&ctz=America%2FNew_York" frameborder="0" scrolling="no" style="border: 0; width: 100%; flex: 1; min-height: 500px;"></iframe>
+                </div>
+                
+                <!-- Kanban Panel -->
+                <div class="dashboard-panel kanban-panel" id="panel-kanban">
+                    <h2 style="margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #e8ecf4;">📋 Kanban Board</h2>
+                    <div class="kanban-board">
+                        <div class="kanban-column">
+                            <h4 style="color: #3498db; margin-bottom: 1rem; font-size: 0.85rem;">📥 To Do</h4>
+                            <div id="todoColumn" class="kanban-items"></div>
+                            <div class="add-task-form">
+                                <input type="text" id="newTodoInput" placeholder="Add task...">
+                                <button onclick="addKanbanTask('todo')">+</button>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Row 3: Quick Links & Session Info -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
-                        <div class="widget">
-                            <h3>🔗 Quick Links <button onclick="openLinkEditor()" style="font-size: 0.7rem; padding: 0.2rem 0.5rem; margin-left: 0.5rem; cursor: pointer;">Edit</button></h3>
-                            <div id="quickLinksContainer" class="quick-links-grid">
-                                <!-- Links populated by JS -->
-                            </div>
+                        <div class="kanban-column">
+                            <h4 style="color: #f39c12; margin-bottom: 1rem; font-size: 0.85rem;">🔄 In Progress</h4>
+                            <div id="inProgressColumn" class="kanban-items"></div>
                         </div>
-                        
-                        <div class="widget">
-                            <h3>ℹ️ Session Info</h3>
-                            <p style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 1rem;">Your current login session details and quick access information.</p>
-                            <p><strong>Status:</strong> <span style="color: #27ae60;">Active</span></p>
-                            <p><strong>Session expires:</strong> <span id="sessionExpiry">--</span></p>
-                            <p><strong>Last login:</strong> <span id="lastLogin">--</span></p>
-                            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 1rem;">Session auto-expires after 24 hours for security.</p>
+                        <div class="kanban-column">
+                            <h4 style="color: #27ae60; margin-bottom: 1rem; font-size: 0.85rem;">✅ Done</h4>
+                            <div id="doneColumn" class="kanban-items"></div>
                         </div>
                     </div>
                 </div>
-            </section>
+                
+                <!-- Quick Links Panel -->
+                <div class="dashboard-panel links-panel" id="panel-links">
+                    <h2 style="margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #e8ecf4;">🔗 Quick Links</h2>
+                    <div id="quickLinksContainer" class="links-grid"></div>
+                </div>
+                
+                <!-- External AI Panels -->
+                <div class="dashboard-panel external-panel" id="panel-gemini">
+                    <div class="external-icon-large">🤖</div>
+                    <h2>Gemini</h2>
+                    <p>Open Google Gemini in a new tab</p>
+                    <a href="https://gemini.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="background: #5a9cf8; color: #0d0d1a;">Open Gemini →</a>
+                </div>
+                
+                <div class="dashboard-panel external-panel" id="panel-chatgpt">
+                    <div class="external-icon-large">💬</div>
+                    <h2>ChatGPT</h2>
+                    <p>Open OpenAI ChatGPT in a new tab</p>
+                    <a href="https://chat.openai.com" target="_blank" rel="noopener" class="btn btn-primary" style="background: #5a9cf8; color: #0d0d1a;">Open ChatGPT →</a>
+                </div>
+                
+                <div class="dashboard-panel external-panel" id="panel-claude">
+                    <div class="external-icon-large">🧠</div>
+                    <h2>Claude</h2>
+                    <p>Open Anthropic Claude in a new tab</p>
+                    <a href="https://claude.ai" target="_blank" rel="noopener" class="btn btn-primary" style="background: #5a9cf8; color: #0d0d1a;">Open Claude →</a>
+                </div>
+                
+                <div class="dashboard-panel external-panel" id="panel-deepseek">
+                    <div class="external-icon-large">🔍</div>
+                    <h2>Deepseek</h2>
+                    <p>Open Deepseek Chat in a new tab</p>
+                    <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="btn btn-primary" style="background: #5a9cf8; color: #0d0d1a;">Open Deepseek →</a>
+                </div>
+                
+                <div class="dashboard-panel external-panel" id="panel-kimi">
+                    <div class="external-icon-large">🌙</div>
+                    <h2>Kimi</h2>
+                    <p>Open Moonshot Kimi in a new tab</p>
+                    <a href="https://kimi.moonshot.cn" target="_blank" rel="noopener" class="btn btn-primary" style="background: #5a9cf8; color: #0d0d1a;">Open Kimi →</a>
+                </div>
+                
+                <!-- Session Info Panel -->
+                <div class="dashboard-panel" id="panel-session">
+                    <h2 style="margin-bottom: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; color: #e8ecf4;">ℹ️ Session Info</h2>
+                    <div class="session-info">
+                        <p><strong>Status:</strong> <span style="color: #27ae60;">Active</span></p>
+                        <p><strong>Session expires:</strong> <span id="sessionExpiry">--</span></p>
+                        <p><strong>Last login:</strong> <span id="lastLogin">--</span></p>
+                        <p style="margin-top: 1rem; font-size: 0.7rem; color: #4a5268;">Session auto-expires after 24 hours.</p>
+                    </div>
+                </div>
+            </div>
             
             <button class="logout-btn" onclick="DashboardAuth.logout()">Logout</button>
         </div>
     </main>
     
-    <!-- Link Editor Modal -->
-    <div id="linkEditorModal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">
-        <div style="background: var(--bg-secondary); padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
-            <h3 style="margin-bottom: 1rem;">Edit Quick Links</h3>
-            <div id="linkEditorList"></div>
-            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                <button onclick="addNewLink()" class="btn btn-primary" style="flex: 1;">+ Add Link</button>
-                <button onclick="resetLinks()" class="btn btn-secondary" style="flex: 1;">Reset Defaults</button>
-            </div>
-            <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-                <button onclick="saveLinks()" class="btn btn-primary" style="flex: 1;">Save</button>
-                <button onclick="closeLinkEditor()" class="btn btn-secondary" style="flex: 1;">Cancel</button>
+    <!-- Sidebar Link Editor Modal -->
+    <div class="sidebar-editor-overlay" id="sidebarEditorModal">
+        <div class="sidebar-editor">
+            <h3>edit sidebar links</h3>
+            <div id="sidebarEditorList"></div>
+            <div class="sidebar-editor-btns">
+                <button class="add-btn" onclick="addSidebarLink()">+ Add</button>
+                <button class="reset-btn" onclick="resetSidebarLinks()">Reset</button>
+                <button class="save-btn" onclick="saveSidebarLinks()">Save</button>
+                <button class="cancel-btn" onclick="closeSidebarEditor()">Cancel</button>
             </div>
         </div>
     </div>
@@ -367,11 +323,114 @@
     <script src="js/nav.js"></script>
     <script src="js/dashboard.js"></script>
     <script>
-        // Calendar state
-        let currentDate = new Date();
-        let calendarEvents = JSON.parse(localStorage.getItem('calendarEvents')) || {};
+        // Default sidebar items
+        const DEFAULT_SIDEBAR = [
+            { id: 'calendar', label: 'Calendar', icon: '📅', type: 'panel' },
+            { id: 'kanban', label: 'Kanban', icon: '📋', type: 'panel' },
+            { id: 'links', label: 'Quick Links', icon: '🔗', type: 'panel' },
+            { id: 'divider1', type: 'divider' },
+            { id: 'gemini', label: 'Gemini', icon: '🤖', type: 'panel' },
+            { id: 'chatgpt', label: 'ChatGPT', icon: '💬', type: 'panel' },
+            { id: 'claude', label: 'Claude', icon: '🧠', type: 'panel' },
+            { id: 'deepseek', label: 'Deepseek', icon: '🔍', type: 'panel' },
+            { id: 'kimi', label: 'Kimi', icon: '🌙', type: 'panel' },
+            { id: 'divider2', type: 'divider' },
+            { id: 'session', label: 'Session', icon: 'ℹ️', type: 'panel' }
+        ];
         
-        // Kanban state
+        let sidebarItems = [];
+        let editedSidebarItems = [];
+        let activePanel = 'calendar';
+        
+        function getSidebarItems() {
+            return JSON.parse(localStorage.getItem('sidebarItems')) || [...DEFAULT_SIDEBAR];
+        }
+        
+        function renderSidebar() {
+            sidebarItems = getSidebarItems();
+            const nav = document.getElementById('sidebarNav');
+            nav.innerHTML = sidebarItems.map(item => {
+                if (item.type === 'divider') {
+                    return '<div class="sidebar-divider"></div>';
+                }
+                const isActive = activePanel === item.id;
+                const isExternal = item.url && !item.type;
+                return `
+                    <div class="sidebar-item ${isActive ? 'active' : ''}" 
+                         onclick="${item.url ? `window.open('${item.url}', '_blank')` : `switchPanel('${item.id}')`}"
+                         title="${item.label}">
+                        <span class="icon">${item.icon}</span>
+                        <span class="label">${item.label}</span>
+                        ${isExternal ? '<span class="external-icon">↗</span>' : ''}
+                        <button class="remove-btn" onclick="event.stopPropagation(); removeSidebarItem('${item.id}')" title="Remove">×</button>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function switchPanel(panelId) {
+            activePanel = panelId;
+            document.querySelectorAll('.dashboard-panel').forEach(p => p.classList.remove('active'));
+            document.getElementById(`panel-${panelId}`).classList.add('active');
+            renderSidebar();
+        }
+        
+        function removeSidebarItem(id) {
+            sidebarItems = sidebarItems.filter(i => i.id !== id);
+            localStorage.setItem('sidebarItems', JSON.stringify(sidebarItems));
+            if (activePanel === id) {
+                const firstPanel = sidebarItems.find(i => i.type === 'panel');
+                if (firstPanel) switchPanel(firstPanel.id);
+            }
+            renderSidebar();
+        }
+        
+        // Sidebar editor
+        function openSidebarEditor() {
+            editedSidebarItems = getSidebarItems().map(i => ({...i}));
+            renderSidebarEditorList();
+            document.getElementById('sidebarEditorModal').classList.add('visible');
+        }
+        
+        function closeSidebarEditor() {
+            document.getElementById('sidebarEditorModal').classList.remove('visible');
+        }
+        
+        function renderSidebarEditorList() {
+            const list = document.getElementById('sidebarEditorList');
+            list.innerHTML = editedSidebarItems.map((item, i) => {
+                if (item.type === 'divider') {
+                    return `<div style="border-top: 1px solid #3a3a50; margin: 0.5rem 0;"></div>`;
+                }
+                return `
+                    <div class="sidebar-editor-row">
+                        <input type="text" class="icon-input" value="${item.icon}" onchange="editedSidebarItems[${i}].icon = this.value">
+                        <input type="text" value="${item.label}" onchange="editedSidebarItems[${i}].label = this.value" placeholder="Label" style="flex:1;">
+                        <input type="url" value="${item.url || ''}" onchange="editedSidebarItems[${i}].url = this.value || undefined; editedSidebarItems[${i}].type = this.value ? undefined : 'panel';" placeholder="URL (optional)" style="flex:2;">
+                        <button class="remove-link-btn" onclick="editedSidebarItems.splice(${i}, 1); renderSidebarEditorList();">×</button>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        function addSidebarLink() {
+            editedSidebarItems.push({ id: 'custom-' + Date.now(), label: '', icon: '🔗', url: '', type: undefined });
+            renderSidebarEditorList();
+        }
+        
+        function saveSidebarLinks() {
+            const valid = editedSidebarItems.filter(i => i.type === 'divider' || (i.label && (i.type === 'panel' || i.url)));
+            localStorage.setItem('sidebarItems', JSON.stringify(valid));
+            renderSidebar();
+            closeSidebarEditor();
+        }
+        
+        function resetSidebarLinks() {
+            editedSidebarItems = [...DEFAULT_SIDEBAR];
+            renderSidebarEditorList();
+        }
+        
+        // Kanban
         let kanbanTasks = JSON.parse(localStorage.getItem('kanbanTasks')) || {
             todo: [
                 { id: 1, text: 'Implement creature AI' },
@@ -385,102 +444,18 @@
             ]
         };
         
-        // Calendar functions
-        function renderCalendar() {
-            const year = currentDate.getFullYear();
-            const month = currentDate.getMonth();
-            const today = new Date();
-            
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-            
-            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                'July', 'August', 'September', 'October', 'November', 'December'];
-            
-            let html = `<div class="calendar-header" style="grid-column: span 7; text-align: center; margin-bottom: 0.5rem;">
-                ${monthNames[month]} ${year}
-            </div>`;
-            
-            const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            dayNames.forEach(day => {
-                html += `<div class="calendar-day" style="font-weight: bold; color: var(--accent-primary);">${day}</div>`;
-            });
-            
-            for (let i = 0; i < firstDay; i++) {
-                html += '<div class="calendar-day"></div>';
-            }
-            
-            for (let day = 1; day <= daysInMonth; day++) {
-                const isToday = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
-                const dateKey = `${year}-${month}-${day}`;
-                const hasEvents = calendarEvents[dateKey] && calendarEvents[dateKey].length > 0;
-                
-                html += `<div class="calendar-day ${isToday ? 'today' : ''} ${hasEvents ? 'has-events' : ''}" 
-                         onclick="toggleDayEvents(${day})" style="cursor: pointer; position: relative;">
-                    ${day}
-                    ${hasEvents ? '<span style="position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background: var(--accent-primary); border-radius: 50%;"></span>' : ''}
-                </div>`;
-            }
-            
-            document.getElementById('calendarWidget').innerHTML = html;
-        }
-        
-        function prevMonth() {
-            currentDate.setMonth(currentDate.getMonth() - 1);
-            renderCalendar();
-        }
-        
-        function nextMonth() {
-            currentDate.setMonth(currentDate.getMonth() + 1);
-            renderCalendar();
-        }
-        
-        function addCalendarEvent() {
-            const day = prompt('Enter day of month:');
-            if (day) {
-                const event = prompt('Enter event description:');
-                if (event) {
-                    const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`;
-                    if (!calendarEvents[dateKey]) {
-                        calendarEvents[dateKey] = [];
-                    }
-                    calendarEvents[dateKey].push(event);
-                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
-                    renderCalendar();
-                }
-            }
-        }
-        
-        function toggleDayEvents(day) {
-            const dateKey = `${currentDate.getFullYear()}-${currentDate.getMonth()}-${day}`;
-            const events = calendarEvents[dateKey] || [];
-            
-            if (events.length > 0) {
-                alert(`Events for day ${day}:\n${events.join('\n')}`);
-            } else {
-                const event = prompt(`Add event for day ${day}:`);
-                if (event) {
-                    if (!calendarEvents[dateKey]) {
-                        calendarEvents[dateKey] = [];
-                    }
-                    calendarEvents[dateKey].push(event);
-                    localStorage.setItem('calendarEvents', JSON.stringify(calendarEvents));
-                    renderCalendar();
-                }
-            }
-        }
-        
-        // Kanban functions
         function renderKanban() {
             ['todo', 'inProgress', 'done'].forEach(status => {
-                const column = document.getElementById(`${status === 'inProgress' ? 'inProgress' : status}Column`);
+                const colId = status === 'inProgress' ? 'inProgressColumn' : status + 'Column';
+                const column = document.getElementById(colId);
+                if (!column) return;
                 column.innerHTML = kanbanTasks[status].map(task => `
                     <div class="kanban-item" draggable="true" ondragstart="drag(event)" id="task-${task.id}">
                         <span>${task.text}</span>
                         <div style="display: flex; gap: 0.25rem; margin-top: 0.5rem;">
-                            ${status !== 'todo' ? `<button onclick="moveTask(${task.id}, '${status}', 'prev')" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">←</button>` : ''}
-                            ${status !== 'done' ? `<button onclick="moveTask(${task.id}, '${status}', 'next')" style="font-size: 0.75rem; padding: 0.25rem 0.5rem;">→</button>` : ''}
-                            <button onclick="deleteTask(${task.id}, '${status}')" style="font-size: 0.75rem; padding: 0.25rem 0.5rem; background: #e74c3c;">×</button>
+                            ${status !== 'todo' ? `<button onclick="moveTask(${task.id}, '${status}', 'prev')" style="font-size: 0.7rem; padding: 0.2rem 0.4rem; background: #2a2a3e; color: #8892a4; border: none; border-radius: 3px; cursor: pointer;">←</button>` : ''}
+                            ${status !== 'done' ? `<button onclick="moveTask(${task.id}, '${status}', 'next')" style="font-size: 0.7rem; padding: 0.2rem 0.4rem; background: #2a2a3e; color: #8892a4; border: none; border-radius: 3px; cursor: pointer;">→</button>` : ''}
+                            <button onclick="deleteTask(${task.id}, '${status}')" style="font-size: 0.7rem; padding: 0.2rem 0.4rem; background: #e74c3c; color: white; border: none; border-radius: 3px; cursor: pointer;">×</button>
                         </div>
                     </div>
                 `).join('');
@@ -490,25 +465,21 @@
         
         function addKanbanTask(status) {
             const input = document.getElementById('newTodoInput');
-            if (input.value.trim()) {
-                kanbanTasks[status].push({
-                    id: Date.now(),
-                    text: input.value.trim()
-                });
+            if (input && input.value.trim()) {
+                kanbanTasks[status].push({ id: Date.now(), text: input.value.trim() });
                 input.value = '';
                 renderKanban();
             }
         }
         
         function moveTask(id, currentStatus, direction) {
-            const statusOrder = ['todo', 'inProgress', 'done'];
-            const currentIndex = statusOrder.indexOf(currentStatus);
-            const newIndex = direction === 'next' ? currentIndex + 1 : currentIndex - 1;
-            
-            if (newIndex >= 0 && newIndex < statusOrder.length) {
-                const taskIndex = kanbanTasks[currentStatus].findIndex(t => t.id === id);
-                const task = kanbanTasks[currentStatus].splice(taskIndex, 1)[0];
-                kanbanTasks[statusOrder[newIndex]].push(task);
+            const order = ['todo', 'inProgress', 'done'];
+            const idx = order.indexOf(currentStatus);
+            const newIdx = direction === 'next' ? idx + 1 : idx - 1;
+            if (newIdx >= 0 && newIdx < order.length) {
+                const taskIdx = kanbanTasks[currentStatus].findIndex(t => t.id === id);
+                const task = kanbanTasks[currentStatus].splice(taskIdx, 1)[0];
+                kanbanTasks[order[newIdx]].push(task);
                 renderKanban();
             }
         }
@@ -522,51 +493,6 @@
             ev.dataTransfer.setData("text", ev.target.id);
         }
         
-        // Session info
-        function updateSessionInfo() {
-            const session = JSON.parse(localStorage.getItem('dashboard_session'));
-            if (session) {
-                const expiry = new Date(session.timestamp + 24 * 60 * 60 * 1000);
-                document.getElementById('sessionExpiry').textContent = expiry.toLocaleString();
-                document.getElementById('lastLogin').textContent = new Date(session.timestamp).toLocaleString();
-            }
-        }
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginContainer = document.getElementById('loginContainer');
-            const dashboardContainer = document.getElementById('dashboardContainer');
-            const loginForm = document.getElementById('loginForm');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // Check if already authenticated
-            if (DashboardAuth.isAuthenticated()) {
-                loginContainer.classList.add('hidden');
-                dashboardContainer.classList.add('active');
-                renderCalendar();
-                renderKanban();
-                updateSessionInfo();
-                renderQuickLinks();
-            }
-            
-            // Handle login
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const password = document.getElementById('password').value;
-                
-                if (DashboardAuth.login(password)) {
-                    loginContainer.classList.add('hidden');
-                    dashboardContainer.classList.add('active');
-                    renderCalendar();
-                    renderKanban();
-                    updateSessionInfo();
-                    renderQuickLinks();
-                } else {
-                    errorMessage.style.display = 'block';
-                }
-            });
-        });
-        
         // Quick Links
         const DEFAULT_LINKS = [
             { name: 'LM Studio', url: 'https://lmstudio.ai', icon: '🖥️' },
@@ -577,8 +503,6 @@
             { name: 'YouTube', url: 'https://www.youtube.com/@StarTrekNotStarWars', icon: '📺' }
         ];
         
-        let editedLinks = [];
-        
         function getLinks() {
             return JSON.parse(localStorage.getItem('quickLinks')) || [...DEFAULT_LINKS];
         }
@@ -586,54 +510,57 @@
         function renderQuickLinks() {
             const links = getLinks();
             const container = document.getElementById('quickLinksContainer');
-            container.innerHTML = links.map(link => 
-                `<a href="${link.url}" class="quick-link" target="_blank" rel="noopener">${link.icon} ${link.name}</a>`
-            ).join('');
-        }
-        
-        function openLinkEditor() {
-            editedLinks = getLinks().map(l => ({...l}));
-            renderLinkEditorList();
-            document.getElementById('linkEditorModal').style.display = 'flex';
-        }
-        
-        function closeLinkEditor() {
-            document.getElementById('linkEditorModal').style.display = 'none';
-        }
-        
-        function renderLinkEditorList() {
-            const list = document.getElementById('linkEditorList');
-            list.innerHTML = editedLinks.map((link, i) => `
-                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center;">
-                    <input type="text" value="${link.icon}" style="width: 40px; padding: 0.4rem; text-align: center;" onchange="editedLinks[${i}].icon = this.value">
-                    <input type="text" value="${link.name}" style="flex: 1; padding: 0.4rem;" onchange="editedLinks[${i}].name = this.value" placeholder="Name">
-                    <input type="url" value="${link.url}" style="flex: 2; padding: 0.4rem;" onchange="editedLinks[${i}].url = this.value" placeholder="URL">
-                    <button onclick="removeLink(${i})" style="padding: 0.4rem 0.6rem; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer;">×</button>
-                </div>
+            if (!container) return;
+            container.innerHTML = links.map(link => `
+                <a href="${link.url}" class="link-card" target="_blank" rel="noopener">
+                    <span style="font-size: 1.5rem;">${link.icon}</span>
+                    <span>${link.name}</span>
+                </a>
             `).join('');
         }
         
-        function addNewLink() {
-            editedLinks.push({ name: '', url: '', icon: '🔗' });
-            renderLinkEditorList();
+        // Session info
+        function updateSessionInfo() {
+            const session = JSON.parse(localStorage.getItem('dashboard_session'));
+            if (session) {
+                const expiry = new Date(session.timestamp + 24 * 60 * 60 * 1000);
+                const expEl = document.getElementById('sessionExpiry');
+                const lastEl = document.getElementById('lastLogin');
+                if (expEl) expEl.textContent = expiry.toLocaleString();
+                if (lastEl) lastEl.textContent = new Date(session.timestamp).toLocaleString();
+            }
         }
         
-        function removeLink(index) {
-            editedLinks.splice(index, 1);
-            renderLinkEditorList();
-        }
-        
-        function saveLinks() {
-            const valid = editedLinks.filter(l => l.name && l.url);
-            localStorage.setItem('quickLinks', JSON.stringify(valid));
-            renderQuickLinks();
-            closeLinkEditor();
-        }
-        
-        function resetLinks() {
-            editedLinks = [...DEFAULT_LINKS];
-            renderLinkEditorList();
-        }
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginContainer = document.getElementById('loginContainer');
+            const dashboardContainer = document.getElementById('dashboardContainer');
+            const loginForm = document.getElementById('loginForm');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            function showDashboard() {
+                loginContainer.classList.add('hidden');
+                dashboardContainer.classList.add('active');
+                renderSidebar();
+                renderKanban();
+                renderQuickLinks();
+                updateSessionInfo();
+            }
+            
+            if (DashboardAuth.isAuthenticated()) {
+                showDashboard();
+            }
+            
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const password = document.getElementById('password').value;
+                if (DashboardAuth.login(password)) {
+                    showDashboard();
+                } else {
+                    errorMessage.style.display = 'block';
+                }
+            });
+        });
     </script>
 </body>
 </html>

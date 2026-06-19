@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Dashboard - Quick access to cloud AI services. Download and host locally.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Dashboard | PetalScroll Studios">
+    <meta property="og:description" content="Quick access to cloud AI services. Download and host locally.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/ai-dashboard.html">
+    <meta property="og:image" content="https://yoursite.com/assets/images/og-image.jpg">
+    
+    <title>AI Dashboard | PetalScroll Studios</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard-layout {
+            display: flex;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+        }
+        .dashboard-sidebar {
+            width: 220px;
+            background: #0d0d1a;
+            border-right: 1px solid #2a2a3e;
+            display: flex;
+            flex-direction: column;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .sidebar-header {
+            padding: 1rem;
+            border-bottom: 1px solid #2a2a3e;
+            text-align: center;
+            font-weight: 700;
+            color: #7c8a9e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.7rem;
+        }
+        .sidebar-nav {
+            flex: 1;
+            padding: 0.5rem 0;
+        }
+        .sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 1rem;
+            color: #8892a4;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            border-left: 3px solid transparent;
+            text-decoration: none;
+        }
+        .sidebar-item:hover {
+            background: #141428;
+            color: #c0c8d8;
+        }
+        .sidebar-item.active {
+            background: #141428;
+            color: #e8ecf4;
+            border-left-color: #5a9cf8;
+        }
+        .sidebar-item .icon {
+            width: 20px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .sidebar-item .label {
+            flex: 1;
+        }
+        .sidebar-divider {
+            height: 1px;
+            background: #2a2a3e;
+            margin: 0.5rem 1rem;
+        }
+        .sidebar-footer {
+            padding: 0.75rem 1rem;
+            border-top: 1px solid #2a2a3e;
+        }
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            padding: 0.6rem;
+            background: #1a6b3a;
+            border: 1px solid #2a8b4e;
+            border-radius: 4px;
+            color: #c0e8d0;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            transition: all 0.15s ease;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background: #228b4e;
+            color: #e8f4ec;
+        }
+        .dashboard-main {
+            flex: 1;
+            overflow-y: auto;
+            background: var(--bg-primary);
+            height: calc(100vh - 60px);
+        }
+        .dashboard-panel {
+            display: none;
+            padding: 1.5rem;
+            min-height: 100%;
+        }
+        .dashboard-panel.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .panel-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .panel-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.3rem;
+            color: #e8ecf4;
+            margin-bottom: 0.5rem;
+        }
+        .panel-desc {
+            color: #6a7488;
+            margin-bottom: 1.5rem;
+            max-width: 400px;
+        }
+        .panel-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: #5a9cf8;
+            color: #0d0d1a;
+            border: none;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .panel-btn:hover {
+            background: #7bb3ff;
+        }
+        .panel-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .panel-links a {
+            color: #5a9cf8;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .panel-links a:hover {
+            text-decoration: underline;
+        }
+        /* Info panel */
+        .info-panel {
+            display: none;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .info-panel.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+        .info-panel h2 {
+            font-family: 'JetBrains Mono', monospace;
+            color: #e8ecf4;
+            margin-bottom: 1rem;
+        }
+        .info-panel p {
+            color: #8892a4;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .info-panel code {
+            background: #141428;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #c0c8d8;
+        }
+        @media (max-width: 768px) {
+            .dashboard-sidebar {
+                width: 60px;
+            }
+            .sidebar-header, .sidebar-item .label, .sidebar-footer {
+                display: none;
+            }
+            .sidebar-item {
+                justify-content: center;
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">PetalScroll Studios</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="ai-workflow.html" class="active">AI Workflow</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="dashboard-layout">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-header">ai hub</div>
+                <nav class="sidebar-nav" id="sidebarNav">
+                    <div class="sidebar-item active" onclick="switchPanel('gemini')" title="Gemini">
+                        <span class="icon">🤖</span>
+                        <span class="label">Gemini</span>
+                    </div>
+                    <div class="sidebar-item" onclick="switchPanel('chatgpt')" title="ChatGPT">
+                        <span class="icon">💬</span>
+                        <span class="label">ChatGPT</span>
+                    </div>
+                    <div class="sidebar-item" onclick="switchPanel('claude')" title="Claude">
+                        <span class="icon">🧠</span>
+                        <span class="label">Claude</span>
+                    </div>
+                    <div class="sidebar-item" onclick="switchPanel('deepseek')" title="Deepseek">
+                        <span class="icon">🔍</span>
+                        <span class="label">Deepseek</span>
+                    </div>
+                    <div class="sidebar-item" onclick="switchPanel('kimi')" title="Kimi">
+                        <span class="icon">🌙</span>
+                        <span class="label">Kimi</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-item" onclick="switchPanel('lmstudio')" title="LM Studio">
+                        <span class="icon">🖥️</span>
+                        <span class="label">LM Studio</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-item" onclick="switchPanel('about')" title="About">
+                        <span class="icon">ℹ️</span>
+                        <span class="label">About</span>
+                    </div>
+                </nav>
+                <div class="sidebar-footer">
+                    <a href="#" class="download-btn" onclick="downloadPage(); return false;">
+                        📥 Download
+                    </a>
+                </div>
+            </aside>
+            
+            <!-- Main Panel -->
+            <div class="dashboard-main">
+                <div class="dashboard-panel active" id="panel-gemini">
+                    <div class="panel-icon">🤖</div>
+                    <div class="panel-title">Gemini</div>
+                    <div class="panel-desc">Google's AI assistant. Multimodal capabilities, code generation, and creative tasks.</div>
+                    <a href="https://gemini.google.com" target="_blank" rel="noopener" class="panel-btn">Open Gemini →</a>
+                    <div class="panel-links">
+                        <a href="https://gemini.google.com/app" target="_blank">App</a>
+                        <a href="https://ai.google.dev/" target="_blank">API Docs</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-panel" id="panel-chatgpt">
+                    <div class="panel-icon">💬</div>
+                    <div class="panel-title">ChatGPT</div>
+                    <div class="panel-desc">OpenAI's conversational AI. Writing, analysis, coding, and general assistance.</div>
+                    <a href="https://chat.openai.com" target="_blank" rel="noopener" class="panel-btn">Open ChatGPT →</a>
+                    <div class="panel-links">
+                        <a href="https://chat.openai.com" target="_blank">Chat</a>
+                        <a href="https://platform.openai.com/" target="_blank">API Platform</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-panel" id="panel-claude">
+                    <div class="panel-icon">🧠</div>
+                    <div class="panel-title">Claude</div>
+                    <div class="panel-desc">Anthropic's AI assistant. Known for nuanced reasoning, long context, and safety.</div>
+                    <a href="https://claude.ai" target="_blank" rel="noopener" class="panel-btn">Open Claude →</a>
+                    <div class="panel-links">
+                        <a href="https://claude.ai" target="_blank">Chat</a>
+                        <a href="https://docs.anthropic.com/" target="_blank">API Docs</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-panel" id="panel-deepseek">
+                    <div class="panel-icon">🔍</div>
+                    <div class="panel-title">Deepseek</div>
+                    <div class="panel-desc">Advanced reasoning model. Strong at math, code, and technical analysis.</div>
+                    <a href="https://chat.deepseek.com" target="_blank" rel="noopener" class="panel-btn">Open Deepseek →</a>
+                    <div class="panel-links">
+                        <a href="https://chat.deepseek.com" target="_blank">Chat</a>
+                        <a href="https://api.deepseek.com/" target="_blank">API</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-panel" id="panel-kimi">
+                    <div class="panel-icon">🌙</div>
+                    <div class="panel-title">Kimi</div>
+                    <div class="panel-desc">Moonshot AI's assistant. Long context window, document analysis, and web search.</div>
+                    <a href="https://kimi.moonshot.cn" target="_blank" rel="noopener" class="panel-btn">Open Kimi →</a>
+                    <div class="panel-links">
+                        <a href="https://kimi.moonshot.cn" target="_blank">Chat</a>
+                        <a href="https://platform.moonshot.cn/" target="_blank">API Platform</a>
+                    </div>
+                </div>
+                
+                <div class="dashboard-panel" id="panel-lmstudio">
+                    <div class="panel-icon">🖥️</div>
+                    <div class="panel-title">LM Studio</div>
+                    <div class="panel-desc">Local AI model hosting. Run models on your own hardware — no API costs.</div>
+                    <a href="https://lmstudio.ai" target="_blank" rel="noopener" class="panel-btn">Download LM Studio →</a>
+                    <div class="panel-links">
+                        <a href="https://lmstudio.ai" target="_blank">Website</a>
+                        <a href="https://lmstudio.ai/docs" target="_blank">Docs</a>
+                    </div>
+                </div>
+                
+                <div class="info-panel" id="panel-about">
+                    <h2>ℹ️ About This Dashboard</h2>
+                    <p>This is a quick-access hub for cloud AI services. Click any service in the sidebar to open it.</p>
+                    <p><strong>Want to host this locally?</strong> Click the Download button in the sidebar to save this page as a standalone HTML file. Open it in any browser — no server needed.</p>
+                    <p><strong>Customize it:</strong> Edit the HTML file to add your own links or change the layout. It's a single self-contained file.</p>
+                    <p style="margin-top: 2rem;"><a href="ai-workflow.html" style="color: #5a9cf8;">← Back to AI Workflow</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 PetalScroll Studios. All rights reserved.</p>
+    </footer>
+    
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        function switchPanel(panelId) {
+            document.querySelectorAll('.dashboard-panel, .info-panel').forEach(p => p.classList.remove('active'));
+            const panel = document.getElementById('panel-' + panelId);
+            if (panel) panel.classList.add('active');
+            
+            document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+        
+        function downloadPage() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ai-dashboard.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
