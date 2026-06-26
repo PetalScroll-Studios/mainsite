@@ -42,4 +42,29 @@
         <changefreq>daily</changefreq>
         <priority>0.6</priority>
     </url>
+    <url>
+        <loc>https://petalscroll-studios.github.io/mainsite/ai-lab.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://petalscroll-studios.github.io/mainsite/ai-lab/model-database.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://petalscroll-studios.github.io/mainsite/ai-lab/benchmarks.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://petalscroll-studios.github.io/mainsite/ai-lab/testing-methodology.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://petalscroll-studios.github.io/mainsite/ai-lab/tools.html</loc>
+        <lastmod>2026-06-26</lastmod>
+        <priority>0.7</priority>
+    </url>
 </urlset>
