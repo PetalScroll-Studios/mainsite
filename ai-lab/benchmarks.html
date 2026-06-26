@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Benchmarks - My personal benchmark results and links to standard AI evaluations.">
+    <meta property="og:title" content="Benchmarks | AI Lab | PetalScroll Studios">
+    <meta property="og:description" content="My personal benchmark results and links to standard AI evaluations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://petalscroll-studios.github.io/mainsite/ai-lab/benchmarks.html">
+    <meta property="og:image" content="https://petalscroll-studios.github.io/mainsite/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Benchmarks | AI Lab | PetalScroll Studios">
+    <meta name="twitter:description" content="My personal benchmark results and links to standard AI evaluations.">
+    <meta name="twitter:image" content="https://petalscroll-studios.github.io/mainsite/assets/images/og-image.jpg">
+    <title>Benchmarks | AI Lab | PetalScroll Studios</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .benchmark-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .benchmark-table th,
+        .benchmark-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .benchmark-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+        .external-links {
+            list-style: none;
+            padding: 0;
+        }
+        .external-links li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .external-links a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .external-links a:hover {
+            text-decoration: underline;
+        }
+        .external-links .link-desc {
+            display: block;
+            margin-top: 0.25rem;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">PetalScroll Studios</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../games.html">Games</a></li>
+                <li><a href="../ai-lab.html" class="active">AI Lab</a></li>
+                <li><a href="../dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Benchmarks</h1>
+                <p>My results plus links to standard AI evaluations</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">My Benchmark Results</h2>
+                <p style="max-width: 800px; margin: 0 auto 2rem; text-align: center;">
+                    Tested on MSI GF63 Thin, RTX 3050 Laptop (4GB VRAM), 16GB RAM. These are practical workflow tests, not synthetic benchmarks.
+                </p>
+
+                <div style="overflow-x: auto;">
+                    <table class="benchmark-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Coding Task</th>
+                                <th>Reasoning Task</th>
+                                <th>Speed (tok/s)</th>
+                                <th>Context Window</th>
+                                <th>Overall</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Qwen 3.5 9B Q4_K_M</strong></td>
+                                <td>8/10</td>
+                                <td>7/10</td>
+                                <td>~8</td>
+                                <td>Good at 8K</td>
+                                <td>8/10</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gemma4:e2b</strong></td>
+                                <td>8/10</td>
+                                <td>8/10</td>
+                                <td>~10</td>
+                                <td>Good at 8K</td>
+                                <td>8/10</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LFM2.5-8b-a1b (MOE)</strong></td>
+                                <td>7/10</td>
+                                <td>7/10</td>
+                                <td>~9</td>
+                                <td>Good at 8K</td>
+                                <td>7/10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Standard AI Evaluations</h2>
+                <p style="max-width: 800px; margin: 0 auto 2rem; text-align: center;">
+                    <strong>Important:</strong> Benchmarks are useful, but they are not a replacement for testing your actual workflow.
+                </p>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3>General LLM Benchmarks</h3>
+                        <ul class="external-links">
+                            <li>
+                                <a href="https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard" target="_blank" rel="noopener">HuggingFace Open LLM Leaderboard</a>
+                                <span class="link-desc">Community leaderboard for open models</span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/hendrycks/test" target="_blank" rel="noopener">MMLU</a>
+                                <span class="link-desc">Massive Multitask Language Understanding</span>
+                            </li>
+                            <li>
+                                <a href="https://arxiv.org/abs/2103.03874" target="_blank" rel="noopener">ARC (AI2 Reasoning Challenge)</a>
+                                <span class="link-desc">Science reasoning questions</span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/openai/grade-school-math" target="_blank" rel="noopener">GSM8K</a>
+                                <span class="link-desc">Grade school math problems</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Coding Benchmarks</h3>
+                        <ul class="external-links">
+                            <li>
+                                <a href="https://github.com/openai/human-eval" target="_blank" rel="noopener">HumanEval</a>
+                                <span class="link-desc">Code generation benchmark</span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/mbpp/mbpp" target="_blank" rel="noopener">MBPP</a>
+                                <span class="link-desc">Mostly Basic Python Problems</span>
+                            </li>
+                            <li>
+                                <a href="https://www.swebench.com/" target="_blank" rel="noopener">SWE-bench</a>
+                                <span class="link-desc">Real GitHub issue resolution</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="grid-2" style="margin-top: 2rem;">
+                    <div class="card">
+                        <h3>Reasoning</h3>
+                        <ul class="external-links">
+                            <li>
+                                <a href="https://github.com/idavidrein/gpqa" target="_blank" rel="noopener">GPQA</a>
+                                <span class="link-desc">Graduate-level science questions</span>
+                            </li>
+                            <li>
+                                <a href="https://github.com/hendrycks/math" target="_blank" rel="noopener">MATH</a>
+                                <span class="link-desc">Competition mathematics</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Agent & Tool Use</h3>
+                        <ul class="external-links">
+                            <li>
+                                <a href="https://gorilla.cs.berkeley.edu/leaderboard.html" target="_blank" rel="noopener">Berkeley Function Calling Leaderboard</a>
+                                <span class="link-desc">Tool use and function calling</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PetalScroll Studios. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>
