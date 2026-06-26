@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/themes.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dropdowns.css">
 </head>
 <body>
     <header>
@@ -36,8 +37,36 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="active">About</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="ai-workflow.html">AI Workflow</a></li>
+                <li class="nav-item">
+                    <a href="games.html">Games</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="games/call-of-the-druid.html">Call of the Druid</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="ai-lab.html">AI Lab</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ai-lab/model-database.html">Model Database</a></li>
+                        <li><a href="ai-lab/benchmarks.html">Benchmarks</a></li>
+                        <li><a href="ai-lab/testing-methodology.html">Testing Methodology</a></li>
+                        <li><a href="ai-lab/tools.html">Tools</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="youtube.html">YouTube</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="youtube/video-notes.html">Video Notes</a></li>
+                        <li><a href="youtube/experiments.html">Experiments</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="resources.html">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="resources/ai-evaluation-links.html">AI Evaluation Links</a></li>
+                        <li><a href="resources/guides.html">Guides</a></li>
+                        <li><a href="resources/downloads.html">Downloads</a></li>
+                    </ul>
+                </li>
                 <li><a href="dashboard.html">Dashboard</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
