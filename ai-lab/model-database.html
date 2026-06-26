@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Model Database - AI models I've tested with performance ratings and hardware requirements.">
+    <meta property="og:title" content="Model Database | AI Lab | PetalScroll Studios">
+    <meta property="og:description" content="AI models I've tested with performance ratings and hardware requirements.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://petalscroll-studios.github.io/mainsite/ai-lab/model-database.html">
+    <meta property="og:image" content="https://petalscroll-studios.github.io/mainsite/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Model Database | AI Lab | PetalScroll Studios">
+    <meta name="twitter:description" content="AI models I've tested with performance ratings and hardware requirements.">
+    <meta name="twitter:image" content="https://petalscroll-studios.github.io/mainsite/assets/images/og-image.jpg">
+    <title>Model Database | AI Lab | PetalScroll Studios</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--accent-primary);
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+        .model-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .model-table th,
+        .model-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .model-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+        .model-table tr:hover {
+            background: var(--bg-secondary);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .status-active {
+            background: #22c55e;
+            color: #fff;
+        }
+        .status-retired {
+            background: #eab308;
+            color: #000;
+        }
+        .status-failed {
+            background: #ef4444;
+            color: #fff;
+        }
+        .rating {
+            display: flex;
+            gap: 0.25rem;
+        }
+        .rating-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-color);
+        }
+        .rating-dot.filled {
+            background: var(--accent-primary);
+        }
+        @media (max-width: 768px) {
+            .model-table {
+                font-size: 0.9rem;
+            }
+            .model-table th,
+            .model-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">PetalScroll Studios</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../games.html">Games</a></li>
+                <li><a href="../ai-lab.html" class="active">AI Lab</a></li>
+                <li><a href="../dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Model Database</h1>
+                <p>Every model I've tested, with honest notes about what worked and what didn't</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="retired">Retired</button>
+                    <button class="filter-btn" data-filter="failed">Failed</button>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="model-table" id="model-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Size</th>
+                                <th>Hardware</th>
+                                <th>Runtime</th>
+                                <th>Coding</th>
+                                <th>Reasoning</th>
+                                <th>Speed</th>
+                                <th>Status</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-status="active">
+                                <td><strong>Qwen 3.5 9B</strong></td>
+                                <td>9B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>~8 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Great daily assistant, solid coding</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong>Gemma4:e2b</strong></td>
+                                <td>~8B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>~10 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Recommended by community, fast</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong>Qwen 2.5 Coder 7B</strong></td>
+                                <td>7B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot filled"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>~12 tok/s</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Replaced by newer models</td>
+                            </tr>
+                            <tr data-status="failed">
+                                <td><strong>Roblox-Coder-v2</strong></td>
+                                <td>7B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="rating">
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                        <span class="rating-dot"></span>
+                                    </div>
+                                </td>
+                                <td>N/A</td>
+                                <td><span class="status-badge status-failed">Failed</span></td>
+                                <td>Failed to produce output, LM Studio issues</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p style="margin-top: 2rem; opacity: 0.7; font-size: 0.9rem;">
+                    <strong>Note:</strong> Ratings are personal assessments based on my workflow, not standardized benchmarks.
+                    Speed measured on RTX 3050 Laptop with 4GB VRAM.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PetalScroll Studios. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/filters.js"></script>
+</body>
+</html>
