@@ -127,41 +127,123 @@
                         <thead>
                             <tr>
                                 <th>Model</th>
-                                <th>Coding Task</th>
-                                <th>Reasoning Task</th>
-                                <th>Speed (tok/s)</th>
-                                <th>Context Window</th>
-                                <th>Overall</th>
+                                <th>Quant</th>
+                                <th>GPU Offload</th>
+                                <th>TTFT (s)</th>
+                                <th>Tok/sec</th>
+                                <th>Tokens</th>
+                                <th>1000 Words?</th>
+                                <th>Notes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Qwen 3.5 9B Q4_K_M</strong></td>
-                                <td>8/10</td>
-                                <td>7/10</td>
-                                <td>~8</td>
-                                <td>Good at 8K</td>
-                                <td>8/10</td>
+                                <td><strong>Qwen3.5-9b-Sushi-Coder-RL</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>18</td>
+                                <td>1.36</td>
+                                <td>8.07</td>
+                                <td>1,201</td>
+                                <td>No (887)</td>
+                                <td>Top coder contender</td>
                             </tr>
                             <tr>
-                                <td><strong>Gemma4:e2b</strong></td>
-                                <td>8/10</td>
-                                <td>8/10</td>
-                                <td>~10</td>
-                                <td>Good at 8K</td>
-                                <td>8/10</td>
+                                <td><strong>gemma-4-E4B-it-qat</strong></td>
+                                <td>Q4_K_XL</td>
+                                <td>22</td>
+                                <td>0.62</td>
+                                <td>13.29</td>
+                                <td>1,545</td>
+                                <td>Yes (1,035)</td>
+                                <td>Fast, reliable output</td>
                             </tr>
                             <tr>
-                                <td><strong>LFM2.5-8b-a1b (MOE)</strong></td>
-                                <td>7/10</td>
-                                <td>7/10</td>
-                                <td>~9</td>
-                                <td>Good at 8K</td>
-                                <td>7/10</td>
+                                <td><strong>Phi4-mini-Instruct</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>Full</td>
+                                <td>0.43</td>
+                                <td>42.51</td>
+                                <td>819</td>
+                                <td>No (582)</td>
+                                <td>Very fast, short output</td>
+                            </tr>
+                            <tr>
+                                <td><strong>gpt-oss20b</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>7</td>
+                                <td>0.88</td>
+                                <td>4.3</td>
+                                <td>2,282</td>
+                                <td>Yes (1,213)</td>
+                                <td>Slow but high quality</td>
+                            </tr>
+                            <tr>
+                                <td><strong>lfm2.5-8b-a1b (MOE)</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>14</td>
+                                <td>1.28</td>
+                                <td>36.32</td>
+                                <td>3,176</td>
+                                <td>Yes (1,382)</td>
+                                <td>Fast MOE, high token count</td>
+                            </tr>
+                            <tr>
+                                <td><strong>granite-4.1-8b</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>26</td>
+                                <td>0.71</td>
+                                <td>10.24</td>
+                                <td>1,305</td>
+                                <td>No (882)</td>
+                                <td>Solid all-around</td>
+                            </tr>
+                            <tr>
+                                <td><strong>qwen3.5-4b-claude-opus-reasoning</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>Full</td>
+                                <td>0.41</td>
+                                <td>30.74</td>
+                                <td>1,591</td>
+                                <td>Yes (1,054)</td>
+                                <td>Fast reasoning model</td>
+                            </tr>
+                            <tr>
+                                <td><strong>qwen3.5-9b-claude-opus-reasoning</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>20</td>
+                                <td>0.96</td>
+                                <td>10.07</td>
+                                <td>1,045</td>
+                                <td>No (753)</td>
+                                <td>Good reasoning, runs warm</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Qwen3-8b pure</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>21</td>
+                                <td>0.99</td>
+                                <td>6.18</td>
+                                <td>1,440</td>
+                                <td>Yes (1,013)</td>
+                                <td>Had to disable thinking</td>
+                            </tr>
+                            <tr>
+                                <td><strong>gemma4-12b-agentic-fable5-v2</strong></td>
+                                <td>Q4_K_M</td>
+                                <td>19</td>
+                                <td>1.33</td>
+                                <td>4.47</td>
+                                <td>1,459</td>
+                                <td>Yes (1,076)</td>
+                                <td>Slow, agentic variant</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                <p style="margin-top: 1rem; opacity: 0.7; font-size: 0.85rem;">
+                    <strong>Test conditions:</strong> 8K context, ~1000 word generation task. MSI GF63 Thin, RTX 3050 (4GB VRAM), 16GB RAM.
+                    TTFT = Time to First Token. "1000 Words?" indicates whether output reached target length.
+                </p>
             </div>
         </section>
 
@@ -202,7 +284,7 @@
                                 <span class="link-desc">Code generation benchmark</span>
                             </li>
                             <li>
-                                <a href="https://github.com/mbpp/mbpp" target="_blank" rel="noopener">MBPP</a>
+                                <a href="https://github.com/google-research/google-research/tree/master/mbpp" target="_blank" rel="noopener">MBPP</a>
                                 <span class="link-desc">Mostly Basic Python Problems</span>
                             </li>
                             <li>

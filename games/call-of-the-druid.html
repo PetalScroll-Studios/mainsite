@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/themes.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/dropdowns.css">
     <style>
         .game-hero {
             padding: 4rem 2rem;
@@ -108,8 +109,36 @@
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../about.html">About</a></li>
-                <li><a href="../games.html" class="active">Games</a></li>
-                <li><a href="../ai-workflow.html">AI Workflow</a></li>
+                <li class="nav-item">
+                    <a href="../games.html" class="active">Games</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="call-of-the-druid.html">Call of the Druid</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../ai-lab.html">AI Lab</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../ai-lab/model-database.html">Model Database</a></li>
+                        <li><a href="../ai-lab/benchmarks.html">Benchmarks</a></li>
+                        <li><a href="../ai-lab/testing-methodology.html">Testing Methodology</a></li>
+                        <li><a href="../ai-lab/tools.html">Tools</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../youtube.html">YouTube</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../youtube/video-notes.html">Video Notes</a></li>
+                        <li><a href="../youtube/experiments.html">Experiments</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="../resources.html">Resources</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../resources/ai-evaluation-links.html">AI Evaluation Links</a></li>
+                        <li><a href="../resources/guides.html">Guides</a></li>
+                        <li><a href="../resources/downloads.html">Downloads</a></li>
+                    </ul>
+                </li>
                 <li><a href="../dashboard.html">Dashboard</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
@@ -140,6 +169,7 @@
                             <li>✨ Master druidic powers and abilities</li>
                             <li>📖 Uncover ancient mysteries and lore</li>
                             <li>🎮 Engaging gameplay with AI-driven NPCs</li>
+                            <li>📜 'A Scroll Written' — A Journal/Diary system of every Druid's journey</li>
                         </ul>
                     </div>
                     <div>
@@ -147,7 +177,7 @@
                         
                         <div class="card" style="margin-top: 2rem;">
                             <h3>Development Team</h3>
-                            <p><strong>Studio:</strong> PetalScroll Studio</p>
+                            <p><strong>Studio:</strong> PetalScroll Studios</p>
                             <p><strong>Lead Developer:</strong> Richard Sees</p>
                             <p><strong>Platform:</strong> Roblox</p>
                             <p><strong>Engine:</strong> Roblox Studio</p>
@@ -159,11 +189,134 @@
         
         <section class="section" style="background-color: var(--bg-secondary);">
             <div class="container">
-                <h2 class="section-title">Screenshots</h2>
-                <div class="screenshot-grid">
-                    <img src="../assets/game-thumbnails/boy in clearing take 2.png" alt="Game Screenshot 1">
-                    <img src="../assets/game-thumbnails/visual and mockups.png" alt="Game Screenshot 2">
-                    <img src="../assets/game-thumbnails/thumbnail 2-a.png" alt="Game Screenshot 3">
+                <h2 class="section-title">Vision Board</h2>
+                <div class="vision-board" style="max-width: 1100px; margin: 0 auto;">
+                    <!-- Yggdrasil Hub -->
+                    <div class="card" style="margin-bottom: 1.5rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+                        <div style="flex-shrink: 0;">
+                            <svg width="120" height="140" viewBox="0 0 160 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="80" cy="82" rx="68" ry="65" fill="rgba(122,154,114,0.08)"/>
+                                <path d="M76 165 Q74 130 70 110 Q64 85 80 70 Q96 55 90 30" stroke="#7A5C3A" stroke-width="5" stroke-linecap="round" fill="none"/>
+                                <path d="M84 165 Q86 128 90 108 Q98 80 80 62 Q62 44 68 18" stroke="#7A5C3A" stroke-width="4" stroke-linecap="round" fill="none"/>
+                                <path d="M76 165 Q60 175 40 180" stroke="#A07850" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M80 168 Q80 182 78 192" stroke="#A07850" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M84 165 Q100 174 120 178" stroke="#A07850" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M72 95 Q50 70 28 58" stroke="#5C7A50" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                                <path d="M80 75 Q68 48 50 32" stroke="#5C7A50" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M82 82 Q105 58 128 50" stroke="#5C7A50" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+                                <path d="M80 68 Q92 38 110 22" stroke="#5C7A50" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                                <ellipse cx="22" cy="52" rx="22" ry="18" fill="rgba(122,154,114,0.55)"/>
+                                <ellipse cx="38" cy="38" rx="18" ry="16" fill="rgba(90,130,80,0.6)"/>
+                                <ellipse cx="58" cy="26" rx="20" ry="17" fill="rgba(122,154,114,0.5)"/>
+                                <ellipse cx="80" cy="18" rx="24" ry="20" fill="rgba(76,110,76,0.65)"/>
+                                <ellipse cx="104" cy="24" rx="22" ry="18" fill="rgba(122,154,114,0.55)"/>
+                                <ellipse cx="124" cy="42" rx="20" ry="17" fill="rgba(90,130,80,0.6)"/>
+                                <ellipse cx="138" cy="58" rx="18" ry="15" fill="rgba(122,154,114,0.5)"/>
+                                <circle cx="60" cy="40" r="2.5" fill="#C8D870" opacity="0.8"/>
+                                <circle cx="100" cy="30" r="2" fill="#E8D870" opacity="0.7"/>
+                                <circle cx="80" cy="10" r="2" fill="#A8E870" opacity="0.8"/>
+                                <circle cx="80" cy="90" r="12" stroke="rgba(200,150,42,0.4)" stroke-width="1.5" fill="rgba(200,200,100,0.08)" stroke-dasharray="3 4"/>
+                                <circle cx="80" cy="90" r="6" fill="rgba(200,150,42,0.25)"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.5rem;">Central Hub · Sacred Landmark</p>
+                            <h3>Yggdrasil — The World Tree</h3>
+                            <p style="font-size: 0.9rem; line-height: 1.7; opacity: 0.8;">The ancient heart of the realm. Yggdrasil stands not as the destination, but as the beginning. From its luminous roots, druids venture into the Celtic wilds — and to its sacred groves they return, bearing new knowledge, new companions, and new stories.</p>
+                            <span style="display: inline-block; margin-top: 0.75rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-primary); border: 1.5px solid var(--accent-primary); padding: 3px 12px; border-radius: 20px;">🌿 Hearth · Portal · Sanctuary</span>
+                        </div>
+                    </div>
+
+                    <!-- Companions -->
+                    <div class="card" style="margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.75rem;">Creature Collection · Heart of the Game</p>
+                        <h3>Companions of the Wild</h3>
+                        <p style="font-size: 0.85rem; font-style: italic; opacity: 0.7; margin-bottom: 1rem;">Not battle monsters. Not collectibles. Living creatures of the Celtic wilds who choose to walk beside you.</p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 1rem;">
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🦌</div>
+                                <strong>Deer</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Gentle · Alert</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🦊</div>
+                                <strong>Fox</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Clever · Swift</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🐇</div>
+                                <strong>Rabbit</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Timid · Lucky</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🦡</div>
+                                <strong>Badger</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Steadfast · Fierce</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🐺</div>
+                                <strong>Wolf</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Loyal · Pack-wise</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🦅</div>
+                                <strong>Raven</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Omens · Memory</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">🦉</div>
+                                <strong>Owl</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Silent · Seeing</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--bg-primary); border-radius: 12px;">
+                                <div style="font-size: 2rem;">✨</div>
+                                <strong>Celtic Spirits</strong>
+                                <p style="font-size: 0.75rem; font-style: italic; opacity: 0.7;">Ancient · Otherworldly</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Biomes & Elements -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div class="card">
+                            <p style="font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.75rem;">World Regions · Exploration</p>
+                            <h3>The Celtic Wilds</h3>
+                            <div style="margin-top: 1rem;">
+                                <div style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px; margin-bottom: 0.5rem;">
+                                    <strong>🌿 Ireland Summer</strong>
+                                    <p style="font-size: 0.8rem; font-style: italic; opacity: 0.7;">Verdant hills, warm stone, buzzing life</p>
+                                </div>
+                                <div style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px; margin-bottom: 0.5rem;">
+                                    <strong>❄️ Ireland Winter</strong>
+                                    <p style="font-size: 0.8rem; font-style: italic; opacity: 0.7;">Frosted groves, silent trails, survival</p>
+                                </div>
+                                <div style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px;">
+                                    <strong>🔮 Future Regions</strong>
+                                    <p style="font-size: 0.8rem; font-style: italic; opacity: 0.7;">Faraway lands yet to be revealed</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p style="font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent-primary); margin-bottom: 0.75rem;">Elemental Triad</p>
+                            <h3>Fire, Earth, and Water</h3>
+                            <div style="margin-top: 1rem;">
+                                <div style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px; margin-bottom: 0.5rem;">
+                                    <strong>🔥 Fire</strong>
+                                    <p style="font-size: 0.8rem; font-style: italic; opacity: 0.7;">Burn and light ablaze</p>
+                                </div>
+                                <div style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px; margin-bottom: 0.5rem;">
+                                    <strong>🌍 Earth</strong>
+                                    <p style="font-size: 0.8rem; font-style: italic; opacity: 0.7;">Grow and fortify in strength</p>
+                                </div>
+                                <div style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px;">
+                                    <strong>💧 Water</strong>
+                                    <p style="font-size: 0.8rem; font-style: italic; opacity: 0.7;">Flow and give life</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </section>

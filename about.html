@@ -148,37 +148,41 @@
         
         <section class="section">
             <div class="container">
-                <h2 class="section-title">Employment History</h2>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3>Contract Driver</h3>
-                        <p class="text-secondary">Uber, Doordash | Dec 2021 – Present</p>
-                        <p>Rated consistently highest for customer satisfaction. Maintained safe, clean vehicles and provided service beyond expectations.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Appointment Clerk</h3>
-                        <p class="text-secondary">Saia LTL Freight | Apr 2022 – Oct 2022</p>
-                        <p>Coordinated customer appointments across multiple systems including hazmat. Served as backup for OS&D department.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Customer Advocate Team Member</h3>
-                        <p class="text-secondary">FedEx Services | Jan 2021 – Dec 2021</p>
-                        <p>Mediator for complex customer issues. Created follow-up cases and served as de-escalation desk.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Customer Advocate Team (Freight)</h3>
-                        <p class="text-secondary">FedEx TechConnect | Apr 2012 – Jan 2019</p>
-                        <p>Helped build newly formed department. Liaison to VP-level management. Coached customer service interactions.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Customer Service Representative II</h3>
-                        <p class="text-secondary">FedEx Freight / TechConnect | Jun 2007 – Apr 2012</p>
-                        <p>Served as Lead coaching co-workers. Honored with multiple Bravo Zulu awards (2010, 2012, 2013).</p>
-                    </div>
-                    <div class="card">
-                        <h3>Email Support Desk</h3>
-                        <p class="text-secondary">FedEx Services | Jan 2019 – Jan 2021</p>
-                        <p>Processed 80+ email requests daily. Assisted departments with backlogs including Revenue and One Call.</p>
+                <button onclick="toggleEmployment()" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin: 0 auto 2rem; padding: 0.75rem 2rem; background: var(--accent-primary); color: var(--bg-primary); border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">
+                    <span id="employment-arrow" style="transition: transform 0.3s ease;">▶</span> Employment History
+                </button>
+                <div id="employment-content" style="display: none;">
+                    <div class="grid-2">
+                        <div class="card">
+                            <h3>Contract Driver</h3>
+                            <p class="text-secondary">Uber, Doordash | Dec 2021 – Present</p>
+                            <p>Rated consistently highest for customer satisfaction. Maintained safe, clean vehicles and provided service beyond expectations.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Appointment Clerk</h3>
+                            <p class="text-secondary">Saia LTL Freight | Apr 2022 – Oct 2022</p>
+                            <p>Coordinated customer appointments across multiple systems including hazmat. Served as backup for OS&D department.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Customer Advocate Team Member</h3>
+                            <p class="text-secondary">FedEx Services | Jan 2021 – Dec 2021</p>
+                            <p>Mediator for complex customer issues. Created follow-up cases and served as de-escalation desk.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Customer Advocate Team (Freight)</h3>
+                            <p class="text-secondary">FedEx TechConnect | Apr 2012 – Jan 2019</p>
+                            <p>Helped build newly formed department. Liaison to VP-level management. Coached customer service interactions.</p>
+                        </div>
+                        <div class="card">
+                            <h3>Customer Service Representative II</h3>
+                            <p class="text-secondary">FedEx Freight / TechConnect | Jun 2007 – Apr 2012</p>
+                            <p>Served as Lead coaching co-workers. Honored with multiple Bravo Zulu awards (2010, 2012, 2013).</p>
+                        </div>
+                        <div class="card">
+                            <h3>Email Support Desk</h3>
+                            <p class="text-secondary">FedEx Services | Jan 2019 – Jan 2021</p>
+                            <p>Processed 80+ email requests daily. Assisted departments with backlogs including Revenue and One Call.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -238,5 +242,18 @@
     
     <script src="js/theme.js"></script>
     <script src="js/nav.js"></script>
+    <script>
+        function toggleEmployment() {
+            const content = document.getElementById('employment-content');
+            const arrow = document.getElementById('employment-arrow');
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
 </body>
 </html>

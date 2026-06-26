@@ -127,14 +127,17 @@
                     <div class="step-content">
                         <h3>General Conversation</h3>
                         <p>Can it follow instructions? Does it understand context? Is it helpful without being verbose?</p>
-                        <ul>
+                        <div class="test-example">
+                            <strong>My RL Test Example</strong><br><br>
+                            "Write a detailed explanation of how a space shuttle is able to take off, orbit, then return to Earth.<br>
+                            * Use approximately 1000 words.<br>
+                            * Use headings and bullet points."
+                        </div>
+                        <ul style="margin-top: 1rem;">
                             <li>Summarize a long document</li>
                             <li>Explain a concept simply</li>
                             <li>Reason through a problem step by step</li>
                         </ul>
-                        <div class="test-example">
-                            <strong>Test prompt:</strong> "Explain the difference between REST and GraphQL in 3 sentences."
-                        </div>
                     </div>
                 </div>
 
@@ -143,15 +146,26 @@
                     <div class="step-content">
                         <h3>Coding Ability</h3>
                         <p>Can it understand an existing project? Modify code safely? Debug errors? Maintain style?</p>
-                        <ul>
+                        <div class="test-example">
+                            <strong>My RL Test Example</strong><br><br>
+                            "Create a Roblox Lua server script that randomly spawns trees around a map.<br>
+                            Requirements:<br>
+                            * The script runs from ServerScriptService<br>
+                            * It uses a tree Model stored in ReplicatedStorage called \"Tree\"<br>
+                            * If a folder named \"GeneratedFlora\" does not exist in Workspace, the script should create it<br>
+                            * Spawn 25 trees<br>
+                            * Place them randomly within a 200x200 area<br>
+                            * Use raycasting so trees sit on the ground instead of floating<br>
+                            * Give each tree a random rotation and small random scale variation<br>
+                            * Add comments explaining the important parts<br>
+                            * Return only the script. Do not explain how to set it up."
+                        </div>
+                        <ul style="margin-top: 1rem;">
                             <li>Read a codebase and answer questions about it</li>
                             <li>Add a feature to existing code</li>
                             <li>Fix a bug without breaking other things</li>
                             <li>Match the existing code style</li>
                         </ul>
-                        <div class="test-example">
-                            <strong>Test prompt:</strong> "Add error handling to this function. Match the existing code style."
-                        </div>
                     </div>
                 </div>
 
@@ -160,14 +174,15 @@
                     <div class="step-content">
                         <h3>Agent Behavior</h3>
                         <p>Can it use tools? Create files? Follow multi-step instructions?</p>
-                        <ul>
+                        <div class="test-example">
+                            <strong>My RL Test Example</strong><br><br>
+                            "Create a new file called utils.js with a function that formats dates. Then update index.html to use it."
+                        </div>
+                        <ul style="margin-top: 1rem;">
                             <li>Use file read/write tools correctly</li>
                             <li>Execute commands safely</li>
                             <li>Follow a multi-step plan without losing track</li>
                         </ul>
-                        <div class="test-example">
-                            <strong>Test prompt:</strong> "Create a new file called utils.js with a function that formats dates. Then update index.html to use it."
-                        </div>
                     </div>
                 </div>
 
@@ -176,15 +191,15 @@
                     <div class="step-content">
                         <h3>Hardware Reality</h3>
                         <p>A benchmark saying a model is "excellent" does not matter if it doesn't fit VRAM, is too slow, or context destroys performance.</p>
-                        <ul>
+                        <div class="test-example">
+                            <strong>Reality check:</strong> "I tested this model with a 16K context window. It worked at 2K, was slow at 8K, and produced garbage at 16K."
+                        </div>
+                        <ul style="margin-top: 1rem;">
                             <li>Does it fit in 4GB VRAM?</li>
                             <li>Is it fast enough for interactive use?</li>
                             <li>How does it handle long contexts?</li>
                             <li>Does it crash or produce garbage at scale?</li>
                         </ul>
-                        <div class="test-example">
-                            <strong>Reality check:</strong> "I tested this model with a 16K context window. It worked at 2K, was slow at 8K, and produced garbage at 16K."
-                        </div>
                     </div>
                 </div>
 

@@ -184,112 +184,166 @@
                         </thead>
                         <tbody>
                             <tr data-status="active">
-                                <td><strong>Qwen 3.5 9B</strong></td>
-                                <td>9B</td>
+                                <td><strong><a href="https://huggingface.co/unsloth/LFM2.5-8B-A1B-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">lfm2.5-8b-a1b</a></strong></td>
+                                <td>8B (MOE)</td>
                                 <td>RTX 3050</td>
                                 <td>LM Studio</td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>~8 tok/s</td>
+                                <td>36.32 tok/s</td>
                                 <td><span class="status-badge status-active">Active</span></td>
-                                <td>Great daily assistant, solid coding</td>
+                                <td>MOE architecture, very fast, Q4_K_M</td>
                             </tr>
                             <tr data-status="active">
-                                <td><strong>Gemma4:e2b</strong></td>
+                                <td><strong><a href="https://huggingface.co/unsloth/gemma-4-E4B-it-qat-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">gemma4 e4b qat</a></strong></td>
                                 <td>~8B</td>
                                 <td>RTX 3050</td>
                                 <td>LM Studio</td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>~10 tok/s</td>
+                                <td>13.29 tok/s</td>
                                 <td><span class="status-badge status-active">Active</span></td>
-                                <td>Recommended by community, fast</td>
+                                <td>Fast, hits 1000+ words, Q4_K_XL</td>
                             </tr>
-                            <tr data-status="retired">
-                                <td><strong>Qwen 2.5 Coder 7B</strong></td>
-                                <td>7B</td>
+                            <tr data-status="active">
+                                <td><strong><a href="https://huggingface.co/unsloth/gpt-oss-20b-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">gpt oss 20b</a></strong></td>
+                                <td>20B</td>
                                 <td>RTX 3050</td>
                                 <td>LM Studio</td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot filled"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>~12 tok/s</td>
+                                <td>4.3 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Large model, slower but capable, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong>gemma4 12b fab5-v2</strong></td>
+                                <td>12B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>4.47 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Agentic variant, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong><a href="https://huggingface.co/bigatuna/Qwen3.5-9b-Sushi-Coder-RL-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">qwen3.5 9b sushi</a></strong></td>
+                                <td>9B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>8.07 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Top coder contender, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong><a href="https://huggingface.co/unsloth/granite-4.1-8b-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">granite 4.1 8b</a></strong></td>
+                                <td>8B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>10.24 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Solid performance, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong>qwopus 3.5 4b</strong></td>
+                                <td>4B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>30.74 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Fast reasoning, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong>qwen3.6-14b</strong></td>
+                                <td>14B (MOE)</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>9.45 tok/s</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Newer MOE model, Q5_K_M</td>
+                            </tr>
+                            <tr data-status="active">
+                                <td><strong>fabliq 8b</strong></td>
+                                <td>8B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>N/A</td>
+                                <td><span class="status-badge status-active">Active</span></td>
+                                <td>Agent reasoning model</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://huggingface.co/unsloth/Phi-4-mini-instruct-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">Phi4-mini-Instruct</a></strong></td>
+                                <td>3.8B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>42.51 tok/s</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Very fast but short output, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://huggingface.co/mradermacher/Qwen3.5-4B-SFT-Claude-Opus-Reasoning-Unsloth-i1-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">qwen3.5-4b-claude-opus-reasoning</a></strong></td>
+                                <td>4B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>30.74 tok/s</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Replaced by qwopus 3.5 4b</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://huggingface.co/mradermacher/Qwen3.5-9B-SFT-Claude-Opus-Reasoning-Unsloth-i1-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">qwen3.5-9b-claude-opus-reasoning</a></strong></td>
+                                <td>9B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>10.07 tok/s</td>
                                 <td><span class="status-badge status-retired">Retired</span></td>
                                 <td>Replaced by newer models</td>
                             </tr>
-                            <tr data-status="failed">
-                                <td><strong>Roblox-Coder-v2</strong></td>
-                                <td>7B</td>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">Qwen3.5-4b MTP/bart</a></strong></td>
+                                <td>4B</td>
                                 <td>RTX 3050</td>
                                 <td>LM Studio</td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="rating">
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                        <span class="rating-dot"></span>
-                                    </div>
-                                </td>
                                 <td>N/A</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Replaced by newer variants</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://huggingface.co/unsloth/Phi-4-mini-reasoning-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">Phi4-mini-reasoning</a></strong></td>
+                                <td>3.8B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>N/A</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Instruct version preferred</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://huggingface.co/unsloth/gemma-4-12B-it-qat-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">gemma-4-12B-it-qat</a></strong></td>
+                                <td>12B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>3.32 tok/s</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Too slow on 4GB VRAM, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="retired">
+                                <td><strong><a href="https://lmstudio.ai/models/qwen/qwen3-8b" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">Qwen3-8b pure</a></strong></td>
+                                <td>8B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>6.18 tok/s</td>
+                                <td><span class="status-badge status-retired">Retired</span></td>
+                                <td>Had to turn thinking off, Q4_K_M</td>
+                            </tr>
+                            <tr data-status="failed">
+                                <td><strong><a href="https://huggingface.co/Jackrong/Qwopus3.5-9B-Coder-MTP-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">Qwopus3.5-9b-coder-mtp</a></strong></td>
+                                <td>9B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>5.44 tok/s</td>
                                 <td><span class="status-badge status-failed">Failed</span></td>
-                                <td>Failed to produce output, LM Studio issues</td>
+                                <td>Thinking slowed it down, couldn't disable</td>
+                            </tr>
+                            <tr data-status="failed">
+                                <td><strong><a href="https://huggingface.co/Jackrong/Qwopus3.5-9B-Coder-GGUF" target="_blank" rel="noopener" style="color: var(--accent-primary); text-decoration: none;">Qwopus3.5-9b-coder non-mtp</a></strong></td>
+                                <td>9B</td>
+                                <td>RTX 3050</td>
+                                <td>LM Studio</td>
+                                <td>5.05 tok/s</td>
+                                <td><span class="status-badge status-failed">Failed</span></td>
+                                <td>Thinking slowed it down, couldn't disable</td>
                             </tr>
                         </tbody>
                     </table>
