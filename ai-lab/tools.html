@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Tools - Tools I use daily for local AI experimentation and development.">
+    <meta property="og:title" content="Tools | AI Lab | PetalScroll Studios">
+    <meta property="og:description" content="Tools I use daily for local AI experimentation and development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://petalscroll-studios.github.io/mainsite/ai-lab/tools.html">
+    <meta property="og:image" content="https://petalscroll-studios.github.io/mainsite/assets/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tools | AI Lab | PetalScroll Studios">
+    <meta name="twitter:description" content="Tools I use daily for local AI experimentation and development.">
+    <meta name="twitter:image" content="https://petalscroll-studios.github.io/mainsite/assets/images/og-image.jpg">
+    <title>Tools | AI Lab | PetalScroll Studios</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/themes.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .tool-card {
+            border-left: 4px solid var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+        .tool-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .tool-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        .tool-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">PetalScroll Studios</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../games.html">Games</a></li>
+                <li><a href="../ai-lab.html" class="active">AI Lab</a></li>
+                <li><a href="../dashboard.html">Dashboard</a></li>
+            </ul>
+            <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>AI Tools</h1>
+                <p>Tools I use daily for local AI experimentation and development</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container" style="max-width: 900px;">
+                <div class="card tool-card">
+                    <h3>🖥️ LM Studio</h3>
+                    <p><strong>Purpose:</strong> Running local LLMs</p>
+                    <p>My primary tool for loading and testing local models. Supports GGUF format, multiple model architectures, and provides a clean UI for model management.</p>
+                    <p><strong>Why I use it:</strong> Easy to use, good model library, works well on my RTX 3050.</p>
+                    <a href="https://lmstudio.ai/" target="_blank" rel="noopener" class="tool-link">Visit LM Studio →</a>
+                </div>
+
+                <div class="card tool-card">
+                    <h3>🤖 MiMoCode</h3>
+                    <p><strong>Purpose:</strong> AI-assisted development</p>
+                    <p>Interactive CLI tool for software engineering tasks. Helps with code editing, debugging, and project navigation.</p>
+                    <p><strong>Why I use it:</strong> Fast, understands context well, works with local models.</p>
+                </div>
+
+                <div class="card tool-card">
+                    <h3>🦙 Unsloth Studio</h3>
+                    <p><strong>Purpose:</strong> Model fine-tuning</p>
+                    <p>Tool for fine-tuning models on custom data. Used for experimenting with model customization.</p>
+                    <p><strong>Why I use it:</strong> Makes fine-tuning accessible on consumer hardware.</p>
+                    <a href="https://unsloth.ai/" target="_blank" rel="noopener" class="tool-link">Visit Unsloth →</a>
+                </div>
+
+                <div class="card tool-card">
+                    <h3>🔧 Ollama</h3>
+                    <p><strong>Purpose:</strong> Model testing and comparison</p>
+                    <p>Lightweight framework for running models locally. Good for quick tests and comparing different model versions.</p>
+                    <p><strong>Why I use it:</strong> Fast setup, good for scripting and automation.</p>
+                    <a href="https://ollama.ai/" target="_blank" rel="noopener" class="tool-link">Visit Ollama →</a>
+                </div>
+
+                <div class="card tool-card">
+                    <h3>🎨 Meshy</h3>
+                    <p><strong>Purpose:</strong> 3D asset generation</p>
+                    <p>AI-powered 3D model generation for game development assets.</p>
+                    <p><strong>Why I use it:</strong> Quick prototyping of game assets.</p>
+                    <a href="https://www.meshy.ai/" target="_blank" rel="noopener" class="tool-link">Visit Meshy →</a>
+                </div>
+
+                <div class="card tool-card">
+                    <h3>🧊 Blender</h3>
+                    <p><strong>Purpose:</strong> 3D modeling and editing</p>
+                    <p>Professional 3D creation suite for editing and refining game assets.</p>
+                    <p><strong>Why I use it:</strong> Industry standard, free, powerful.</p>
+                    <a href="https://www.blender.org/" target="_blank" rel="noopener" class="tool-link">Visit Blender →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 PetalScroll Studios. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>
