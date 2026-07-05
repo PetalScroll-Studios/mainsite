@@ -44,7 +44,6 @@ img {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
@@ -72,7 +71,6 @@ p {
 }
 
 .logo {
-    font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent-primary);

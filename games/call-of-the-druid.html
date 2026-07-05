@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/dropdowns.css">
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta property="og:title" content="Call of the Druid | PetalScroll Studios">
+    <meta property="og:description" content="A druidic, Celtic-inspired open world game for Roblox.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Call of the Druid | PetalScroll Studios">
     <style>
         .game-hero {
             padding: 4rem 2rem;
@@ -100,41 +107,28 @@
 <body>
     <header>
         <nav class="navbar">
-            <a href="../index.html" class="logo">PetalScroll</a>
+            <a href="../index.html" class="logo"><img src="../assets/images/New-Petalscroll_emblem.png" alt="" class="nav-emblem"> PetalScroll Studios</a>
             <button class="nav-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
                 <li class="nav-item">
                     <a class="active">Games</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../games.html">Game Development</a></li>
+                        <li><a href="../games.html">Active Game Developments</a></li>
                         <li><a href="call-of-the-druid.html">Call of the Druid</a></li>
                     </ul>
                 </li>
+                <li><a href="../assets.html">Assets</a></li>
                 <li class="nav-item">
-                    <a >AI Enthusiasts</a>
+                    <a>Related Sites</a>
                     <ul class="dropdown-menu">
-                        <li><a href="../ai-lab.html">AI Lab</a></li>
-                        <li><a href="../ai-lab/model-comparisons.html">Model Comparisons</a></li>
-                        <li><a href="../ai-lab/standard-ai-evals.html">Standard AI Evals</a></li>
-                        <li><a href="../ai-lab/testing-methodology.html">Testing Methodology</a></li>
-                        <li><a href="../ai-lab/tools.html">Tools</a></li>
+                        <li><a href="https://petalscroll-studios.github.io/richard-sees/index.html">Richard Sees</a></li>
+                        <li><a href="https://petalscroll-studios.github.io/twlt/index.html">Today We Learn Together</a></li>
+                        <li><a href="related-game-studios.html">Related Game Studios</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a>Resources</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../resources/ai-evaluation-links.html">AI Evaluation Links</a></li>
-                        <li><a href="../resources/guides.html">Guides</a></li>
-                        <li><a href="../resources/downloads.html">Downloads</a></li>
-                    </ul>
-                </li>
-                <li><a href="../dashboard.html">Dashboard</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
             <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
@@ -385,8 +379,25 @@
         </section>
     </main>
     
-    <footer>
-        <p>&copy; 2026 PetalScroll Studio. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="../assets/images/New-Petalscroll_emblem.png" alt="PetalScroll Studios emblem" class="footer-emblem">
+                    <div class="footer-info">
+                        <h3 class="footer-title">PetalScroll Studios</h3>
+                        <p class="footer-description">Creating games inspired by nature, folklore, and imagination.</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#">GitHub</a>
+                    <a href="../contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PetalScroll Studios. Part of the Richard Sees ecosystem</p>
+            </div>
+        </div>
     </footer>
     
     <script src="../js/theme.js"></script>

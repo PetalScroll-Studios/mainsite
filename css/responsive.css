@@ -11,10 +11,6 @@
         gap: 2rem;
     }
     
-    .blog-featured {
-        grid-template-columns: 1fr;
-    }
-    
     .game-info {
         grid-template-columns: 1fr;
     }
@@ -33,32 +29,8 @@
         padding: 4rem 1rem;
     }
     
-    .dashboard-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .widget-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .grid-2, .grid-3 {
         grid-template-columns: 1fr;
-    }
-    
-    .quick-links-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .calendar-grid {
-        font-size: 0.75rem;
-    }
-    
-    .calendar-day {
-        padding: 0.25rem;
     }
 }
 
@@ -93,20 +65,5 @@
     
     .featured-game {
         padding: 1.5rem;
-    }
-    
-    .login-container {
-        margin: 2rem auto;
-        padding: 1rem;
-    }
-    
-    .login-form {
-        padding: 1.5rem;
-    }
-    
-    .logout-btn {
-        bottom: 1rem;
-        right: 1rem;
-        padding: 0.5rem 1rem;
     }
 }
