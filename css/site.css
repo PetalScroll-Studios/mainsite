@@ -17,8 +17,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-emblem {
-    width: 36px;
-    height: 36px;
+    /* 46px (was 36px) so the emblem is recognizable at a glance.
+       The artwork is portrait; object-position keeps the crop on
+       the goat-head focal point instead of the geometric center. */
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: 50% 32%;
 }
